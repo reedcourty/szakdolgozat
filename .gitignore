@@ -1,19 +1,10 @@
-abstract.aux
-acknowledgement.aux
-appendices.aux
-chapter1.aux
-chapter2.aux
-chapter3.aux
-declaration.aux
-diploma.aux
 diploma.log
 diploma.out
 diploma.thm
 diploma.toc
-guideline.aux
-introduction.aux
-project.aux
-titlepage.aux
+
+# Nem kellenek a *.aux állományok:
+*.aux
 
 # Egyelõre ezt is ignoráljuk:
 diploma.pdf
