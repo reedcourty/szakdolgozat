@@ -5,6 +5,7 @@ diploma.toc
 
 # Nem kellenek a *.aux állományok:
 *.aux
+*.log
 
 # Egyelõre ezt is ignoráljuk:
 diploma.pdf
