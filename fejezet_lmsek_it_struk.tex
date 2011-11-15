@@ -1,6 +1,13 @@
 \chapter{Tanulásmenedzsment rendszerek IT infrastruktúrája}
 \section{A három rétegű architektúra}
 A webes LSM-ek általában a három rétegű architektúrát követik. Ez a három réteg a webkiszolgáló, az adatbázis és az alkalmazás réteg. A réteges szerkezetnek köszönhetően ezek a rendszerek jól skálázhatóak, hiszen az egyes rétegekben megtalálható szolgáltatásokat gyakran ilyen funkciókkal alakítják ki.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=100mm, keepaspectratio]{figures/3tier_simple_001.png}
+\caption{A három rétegű architektúra.} 
+\end{figure}
+
 A rétegeknek nem szükséges fizikailag is külön hardverre kerülni (sőt az alkalmazás- és webkiszolgáló-réteg esetében ez  nem is mindig lehetséges), így a legegyszerűbb kialakítás akár egy számítógépet is igénybe vehet. Ez a megoldás egy viszonylag erős konfiguráció és alacsony felhasználószám esetén működhet.
 \subsection{A webkiszolgáló-réteg}
 \todo{Webszerver}
