@@ -1,10 +1,25 @@
 \chapter{Tanulásmenedzsment rendszerek erőforrásigényei}
 \section{Alapvető igények}
-\todo{•}
-
+\subsection{Az operációs rendszer igényei}
 Minden informatikai rendszernek van erőforrásigénye, vagyis az a minimális hardver konfiguráció, amelyen a rendszer bizonyos számú kéréseket ki tud szolgálni adott időn belül. \todo{Kellene jobb fogalom leírás}
-A rendszer erőforrásigénye sok részletből tevődhet össze. 
-\todo{Milyen OS-en vagyunk, annak is van alap igénye}
+Egy informatikai rendszer teljes erőforrásigénye sok részletből tevődhet össze. Alapvetően meghatározza az operációs rendszer igénye, az erre épülő szolgáltatások (adatbázis szerver, webszerver, levelezőszerver, egyebek) és a főszolgáltatás platformja.
+A ma használatos szerver operációs rendszerek alapkövetelményének számít:
+
+\todo{Forrás: \href{http://msdn.microsoft.com/en-us/windowsserver/cc196364}{link}}
+\todo{Forrás: \href{https://help.ubuntu.com/11.10/installation-guide/i386/minimum-hardware-reqts.html}{link}}
+\todo{Forrás: \href{https://www.redhat.com/rhel/compare/}{link}}
+
+\begin{itemize}
+\item min. 1-1,5 GHz-es CPU (x86 vagy x64), de 2 GHz az ajánlott,
+\item min. 512 MB memória, de 2 GB ajánlott \footnote{Red Hat Linux esetében pl. 1 GB/processzor egység},
+\item min. 10 GB tárkapacitás.
+\end{itemize}
+
+\subsection{Eltérő platformok, eltérő igények}
+Nem csak az LMS-ek, de minden webes alkalmazás esetén is különböző platformokat találunk az alkalmazás szerver oldalán. Az igen elterjedt, középkategóriás PHP mellett az üzleti életben gyakran Java alapokon fejlesztenek, de nem szabad megfeledkezni a .NET-es, Ruby on rails-es, vagy a Python-os megvalósításokról sem.
+Az egyes platformok különböznek teljesítményükben, ''gyorsaságukban'', megbízhatóságukban, de a ,,Melyik nyelven fejlesszük le ezt a rendszert?'' kérdés esetén nem feltétlenül kapjuk meg azonnal a helyes választ.
+\todo{miért jó a php?} 
+
 \todo{Webszerverek eltérő igénye}
 \todo{Platform igények PHP vs. Java vs. Ruby vs. ASP vs. Python}
 \todo{adatbázisok igénye MySQL vs. PostgreSQL vs. Oracle vs. MSSQL}
@@ -12,8 +27,8 @@ A rendszer erőforrásigénye sok részletből tevődhet össze.
 \subsection{Moodle}
 A Moodle hardveres erőforrásigényei a következők:
 \begin{itemize}
-\item{min. 160 MB tárolókapacitás (csak a rendszernek),}
-\item{min. 256 MB memóriakapacitás (1 GB ajánlott).}
+\item min. 160 MB tárolókapacitás (csak a rendszernek),
+\item min. 256 MB memóriakapacitás (1 GB ajánlott).
 \end{itemize}
 \todo{CPU}
 \todo{I/O}
