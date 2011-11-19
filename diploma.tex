@@ -151,6 +151,14 @@ aboveskip=10pt}
 \definecolor{todofrszin}{rgb}{0.00,0.50,0.00}
 \newcommand{\todo}[1]{\fcolorbox{todofrszin}{todobgszin}{\emph{TODO: #1}}\linebreak}
 
+\newenvironment{sajat_itemize}
+{
+	\begin{itemize}
+	\setlength{\itemsep}{0pt}
+}
+{
+	\end{itemize}
+}
 
 %--------------------------------------------------------------------------------------
 % Table of contents and the main text

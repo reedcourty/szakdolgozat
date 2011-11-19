@@ -39,13 +39,13 @@ A Moodle architektúrájában elválik a natív adatbázis-kezelő a felsőbb r�
 Az architekturális felépítésből látható, hogy a Moodle az ADOdb által nyújtott rétegen keresztül egységesen éri el az eltérő adatbázis megvalósításokat anélkül, hogy foglalkoznia kellene az ezekből eredő problémákkal.  
 
 Az interoperabilitás több Moodle képességben megjelenik, ilyenek például:
-\begin{itemize}
+\begin{sajat_itemize}
 \setlength{\itemsep}{0pt}
 \item autentikáció LDAP-on, Shibboleth-en keresztül
 \item kérdések/kérdéssorok importálása/exportálása több formátumban (pl. XML, XHTML stb.)
 \item erőforrások kezelése (SCORM, AICC)
 \item integráció más tartalom kezelő rendszerekkel (Drupal, Postnuke).
-\end{itemize}
+\end{sajat_itemize}
 
 A Moodle fontos tulajdonsága a modularitás, vagyis a rendszer funkcionalitásának könnyű bővíthetőségek. Ezeket plug-inokkal valósítják meg, amelyek fejlesztését különböző API segítik. Ilyen plug-inok pl. a különböző jelentések (reportok), blokkok, portfóliók, tárolók (repository-k), kereső modulok. Ezek közül nagyon sok megtalálható az alap Moodle telepítésben is, de saját magunk is írhatunk hasonló kiegészítőket.
 
@@ -53,10 +53,10 @@ A Moodle fontos tulajdonsága a modularitás, vagyis a rendszer funkcionalitás�
 
 Mint azt már említettem, a Moodle nagyon sok operációs rendszerre telepíthető. Én az egyik legelterjedtebb telepítési környezet választottam ki, egy ún. LAMP (Linux - Apache - MySQL - PHP) megoldást használtam. Fizikai szerver helyett virtuális szervert alkalmaztam, a Simonyi Károly Szakkollégium Kollégiumi Számítástechnikai Kör erőforrásainak igénybevételével. A virtualizációs megoldás alapja egy VMware ESX szerver volt.
 A szerver konfigurációja viszonylag gyengének számít, ám nem is volt cél, hogy nagy számú felhasználót szolgáljon ki:
-\begin{itemize}
+\begin{sajat_itemize}
 \item Ubuntu Server 10.10 32bit
 \item 512 MiB RAM
 \item 10 GiB tárhely
 \item 4 MiB RAM a videóvezérlőnek 
-\end{itemize}
+\end{sajat_itemize}
 Az így kialakított struktúra tulajdonképpen egy egy gépes megoldás, mind a webszerver, alkalmazás szerver, mind az adatbázis szerver egy \todo{Entitáson, izén, akármin} futott. Természetesen az infrastruktúra méretét lehetett volna növelni, bonyolítani monitorozó, naplófeldolgozó, biztonsági mentés készítő megoldásokkal, de ez szintén nem volt a feladat része.
