@@ -1,5 +1,12 @@
 \chapter{Információs technológiai infrastruktúrák}
 \section{A klasszikus IT infrastruktúra}
+A klasszikusnak mondott IT infrastruktúrát az írás korábbi részében már bemutattam. Itt most a háromrétegű architektúra egyes rétegeinek skálázását, megbízhatósági szintjének növelésére adott lehetőségeket szeretném bemutatni.
+\subsection{Adatbázis réteg}
+\todo{Klaszterek, replikák, stb.}
+\subsection{Alkalmazás réteg}
+\todo{PHP, Java skálázás?}
+\subsection{Webkiszolgáló réteg}
+\todo{Loadbalancing} 
 \section{Felhőalapú infrastruktúrák}
 \subsection{Mi is az a ,,számítási felhő''?}
 
@@ -19,7 +26,7 @@ Timothy Grance
 September 2011
 \end{comment}
 
-Felhőként hivatkozhatunk az Interneten keresztül szolgáltatott alkalmazásokra és a hardverre, szoftverre, amelyek ezeket az alkalmazásokat elérhetővé teszik.
+Általában hivatkozás szintjén nincsenek elkülönítve az Interneten keresztül szolgáltatott alkalmazások, és a felhő infrastrukturális részét képező hardverek, szoftverek, amelyek ezeket az alkalmazásokat elérhetővé teszik. Ahogy azt \aref{fig::cloud_computing_hu}.~ábrán is szemléltetni próbálom a felhő részét képezi az alkalmazás, szolgáltatás, és a hardver is.
 
 \begin{figure}[h!]
 \centering
@@ -30,10 +37,16 @@ Felhőként hivatkozhatunk az Interneten keresztül szolgáltatott alkalmazások
 \todo{Ábra forrása: https://en.wikipedia.org/wiki/File:Cloud\_computing.svg}
 
 \todo{Object Storage ?= Objektum tároló}
+
 \todo{Queue ?= Üzenetsorok}
+
 \todo{Runtime ?= Számításelosztás}
 
+Mélyebb elemzés során azonban a felhőt rétegekre lehet bontani, amely rétegeket a következő alfejezetben részletezném.
+
 \subsection{A felhő rétegei}
+A felhő napjainkban négy architekturális rétegből épül fel, amelyeket alulról fölfelé érdemes megvizsgálni.
+ 
 \subsubsection{Adattár, mint szolgáltatás (\foreignlanguage{english}{data-Storage-as-a-Service, dSaaS})}
 \subsubsection{Infrastuktúra, mint szolgálatás (\foreignlanguage{english}{Infrastructure-as-a-Service, IaaS})}
 \subsubsection{Platform, mint szolgáltatás (\foreignlanguage{english}{Platform-as-a-Service, PaaS})}
