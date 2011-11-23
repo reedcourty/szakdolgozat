@@ -6,8 +6,9 @@
 *.log
 *.lot
 *.out
+*.tcp
 *.thm
 *.toc
 
 # Egyelõre ezt is ignoráljuk:
-diploma.pdf
+szakdolgozat.pdf
