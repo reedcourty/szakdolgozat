@@ -1,11 +1,13 @@
-diploma.log
-diploma.out
-diploma.thm
-diploma.toc
-
-# Nem kellenek a *.aux állományok:
+# Nem kellenek a következõ állományok:
 *.aux
+*.bbl
+*.blg
+*.lof
 *.log
+*.lot
+*.out
+*.thm
+*.toc
 
 # Egyelõre ezt is ignoráljuk:
 diploma.pdf
