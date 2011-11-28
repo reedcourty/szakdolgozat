@@ -165,29 +165,34 @@ aboveskip=10pt}
 %--------------------------------------------------------------------------------------
 \begin{document}
 \singlespacing
-\include{project}
+%\include{project}
 
 \pagenumbering{arabic}
 \onehalfspacing
-\include{titlepage}
-\tableofcontents\vfill
-\include{declaration}
-\include{abstract}
-\include{introduction}
+
+%\include{titlepage}
+%\tableofcontents\vfill
+%\include{declaration}
+%\include{abstract}
+%\include{introduction}
 \include{fejezet_lmsek}
 \include{fejezet_lmsek_it_struk}
 \include{fejezet_lmsek_erof_igenyei}
 \include{fejezet_it_infrastruk}
-\include{acknowledgement}
+%\include{acknowledgement}
 
-\listoffigures\addcontentsline{toc}{chapter}{Ábrák jegyzéke}
-\listoftables\addcontentsline{toc}{chapter}{Táblázatok jegyzéke}
+%\listoffigures\addcontentsline{toc}{chapter}{Ábrák jegyzéke}
+%\listoftables\addcontentsline{toc}{chapter}{Táblázatok jegyzéke}
+
+\todo{Include-old vissza a sallang oldalakat!}
+
+\todo{(project, titlepage, toc, declaration, abstract, introduction, ack, lof, lot)}
 
 \bibliography{irodalomjegyzek}
 \addcontentsline{toc}{chapter}{Irodalomjegyzék}
 \bibliographystyle{plain}
 
-\include{appendices}
+%\include{appendices}
 
 \label{page:last}
 \end{document}
