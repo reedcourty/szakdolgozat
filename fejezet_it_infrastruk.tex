@@ -35,9 +35,39 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
 Mélyebb elemzés során azonban a felhőt rétegekre lehet bontani, amely rétegeket a következő alfejezetben részletezném.
 
 \subsection{A felhő rétegei}
+
+\todo{Ezek lehet inkább szolgáltatás modellek?}
+
 A felhő napjainkban négy architekturális rétegből épül fel, amelyeket alulról fölfelé érdemes megvizsgálni.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.25\textwidth]{figures/cloud_retegek.png}
+\caption{A számítási felhő rétegei \label{fig:cloud_retegek}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/cloud_service_models.png}
+\caption{A számítási felhő szolgáltatási modelljei \label{fig:cloud_service_models}}
+\end{figure}
  
 \subsubsection{Adattár, mint szolgáltatás (\foreignlanguage{english}{data-Storage-as-a-Service, dSaaS})}
+Ezt a réteget \todo{szolgáltatást???} nem minden irodalom szokta említeni, ám én itt mégis külön kezelném, hiszen ez a felhő legalapvetőbb szolgáltatása. Lényege, hogy online tárhelyet biztosít a felhasználóknak. Ilyen szolgáltatást nyújt pl. a \href{http://www.dropbox.com}{Dropbox.com} (főleg személyes felhasználásra, biztonsági mentés, megosztás céljából) vagy az \href{https://aws.amazon.com/s3/}{Amazon S3} (inkább nagy szolgáltatók használják).
+
+A dSaaS oktatási rendszerek esetében sok, nagyméretű adatok esetén lehet előnyös, hiszen nem kell a saját szerverünkön tárolni ezeket, megspórolva ezzel saját adattároló rendszer kialakítását, üzemeltetését. Érdemes megjegyezni, hogy sok adatpéldány esetén is érdemes lehet hasonló szolgáltatás használata, hiszen ebben az esetben az autentikációhoz kötött adatoknál már nem kell a session-öket kezelni, az adatok elérhetőségét megadó URL már tartalmaz egy kódot, csökkentve ezzel a web és alkalmazás szerver terheltségét. 
+
+\todo{dSaaS-ról még valami?}
+
+\todo{Ha a két ábrát össze kellene lőni, ez a legalsó réteg.}
+
 \subsubsection{Infrastuktúra, mint szolgálatás (\foreignlanguage{english}{Infrastructure-as-a-Service, IaaS})}
+
+\todo{IaaS}
 \subsubsection{Platform, mint szolgáltatás (\foreignlanguage{english}{Platform-as-a-Service, PaaS})}
+\todo{PaaS}
 \subsubsection{Szoftver, mint szolgáltatás (\foreignlanguage{english}{Software-as-a-Service,SaaS})}
+\todo{SaaS}
+
+
