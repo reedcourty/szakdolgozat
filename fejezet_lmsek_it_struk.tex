@@ -25,12 +25,16 @@ A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes
 \todo{Még valami a webszerverekről?}
 
 \subsection{Az alkalmazásréteg}
-Az alkalmazásréteg feladatát az alkalmazás szerver látja el. Az alkalmazás szerver egy környezetet biztosít, ahol alkalmazások futhatnak, nem foglalkozva azzal, hogy mik ezek az alkalmazások és mit csinálnak.\cite{serverside} 
+Az alkalmazásréteg feladatát az alkalmazás szerver látja el. Az alkalmazás szerver egy olyan biztosított környezet, ahol alkalmazások futhatnak, és amely környezet szempontjából lényegtelen, hogy mik ezek az alkalmazások és mit csinálnak.\cite{serverside} Az alkalmazás szerver eljárások (programok, rutinok, szkriptek) hatékony végrehajtására dedikált erőforrás.
 
- an application server provides an environment where applications can run, no matter what the applications are or what they do.
-\todo{Alkalmazás szerver}
+Az első alkalmazás szerverek megjelenésekor fő feladatuk volt, hogy webes alkalmazások esetén a webszerver által megjeleníthető tartalmat állítsanak elő. Ezen továbblépve napjainkban már nem csak az oldalgenerálás funkciója jelenik meg ebben a rétegben, hanem egyéb szolgáltatásokat is implementálnak, mint például klaszterszervezést, terheléselosztást, hibaátállást. Ezen funkciókkal elérhető, hogy az alkalmazásfejlesztőknek csak az üzleti logikával kelljen foglalkozni.
+
+\todo{Alkalmazás szerverről mit lehetne még?}
+
 \subsection{Az adatbázisréteg}
-\todo{DB}
+Az adatbázis réteg feladatait az adatbázis szerver látja el. Adatbázis szervernek nevezünk egy dedikált szolgáltatást, ami adatbázisokat tesz elérhető, kezelhetővé. Valójában egy felületet biztosít az alkalmazás rétegben található adatfelhasználó alkalmazás és maguk a felhasználandó adatok között.
+
+\todo{Adatbázisrétegről mit lehet még?}
 
 \section{Egy példa}
 \subsection{A Moodle rendszer}
