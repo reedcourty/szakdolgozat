@@ -8,8 +8,8 @@ A webes LSM-ek általában a három rétegű architektúrát követik. Ez a hár
 \caption{A három rétegű architektúra.}
 \label{fig:3tier_simple_001}
 \end{figure}
-\todo{Ábrára számmal hivatkozni a szövegben}
-A rétegeknek nem szükséges fizikailag is külön hardverre kerülni (sőt az alkalmazás- és webkiszolgáló-réteg esetében ez  nem is mindig lehetséges), így a legegyszerűbb kialakítás akár egy számítógépet is igénybe vehet. Ez a megoldás egy viszonylag erős konfiguráció és alacsony felhasználószám esetén működhet.
+
+\Aref{fig:3tier_simple_001}.~ábrán látható móddal ellentétben a rétegeknek nem szükséges fizikailag is külön hardverre kerülni (sőt az alkalmazás- és webkiszolgáló-réteg esetében ez nem is mindig lehetséges), így a legegyszerűbb kialakítás akár egy számítógépet is igénybe vehet. Ez a megoldás egy viszonylag erős konfiguráció és alacsony felhasználószám esetén működhet.
 \subsection{A webkiszolgáló-réteg}
 A webkiszolgáló-réteg feladatát egy szolgáltatás látja el, amely futhat egy vagy több példányban, és egy példány futhat egy vagy több számítógépen is. Ez a szolgáltatás felelős azért, hogy a kliensek kérésének megfelelően előálljon a weblap, vagyis a kliensek kérésre kapjanak egy HTML dokumentumot, amelyet a felhasználói oldalon jelenítenek meg.
 A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes, nyílt forráskódú (pl. Apache), és kereskedelmi termék is (Microsoft IIS).
@@ -25,6 +25,9 @@ A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes
 \todo{Még valami a webszerverekről?}
 
 \subsection{Az alkalmazásréteg}
+Az alkalmazásréteg feladatát az alkalmazás szerver látja el. Az alkalmazás szerver egy környezetet biztosít, ahol alkalmazások futhatnak, nem foglalkozva azzal, hogy mik ezek az alkalmazások és mit csinálnak.\cite{serverside} 
+
+ an application server provides an environment where applications can run, no matter what the applications are or what they do.
 \todo{Alkalmazás szerver}
 \subsection{Az adatbázisréteg}
 \todo{DB}
