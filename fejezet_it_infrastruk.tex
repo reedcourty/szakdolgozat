@@ -26,17 +26,13 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
 \caption{A számítási felhő (\foreignlanguage{english}{cloud computing}) (Forrás: \href{https://en.wikipedia.org/wiki/File:Cloud\_computing.svg}{Wikipedia})} \label{fig:cloud_computing_hu}
 \end{figure}
 
-\todo{Object Storage ?= Objektum tároló}
-
-\todo{Queue ?= Üzenetsorok}
-
-\todo{Runtime ?= Számításelosztás}
-
 Mélyebb elemzés során azonban a felhőt rétegekre lehet bontani, amely rétegeket a következő alfejezetben részletezném.
 
 \subsection{A felhő rétegei}
 
 \todo{Ezek lehet inkább szolgáltatás modellek?}
+
+\todo{XaaS service ábrán ne legyen kidomborítva, hogy egymásra épülnek!}
 
 A felhő napjainkban négy architekturális rétegből épül fel, amelyeket alulról fölfelé érdemes megvizsgálni.
 
@@ -64,8 +60,13 @@ A dSaaS oktatási rendszerek esetében sok, nagyméretű adatok esetén lehet el
 
 \subsubsection{Infrastuktúra, mint szolgálatás (\foreignlanguage{english}{Infrastructure-as-a-Service, IaaS})}
 
-\foreignlanguage{english}{''The capability provided to the consumer is to provision processing, storage, networks, and other fundamental computing resources where the consumer is able to deploy and run arbitrary software, which can include operating 
-systems and applications. The consumer does not manage or control the underlying cloud infrastructure but has control over operating systems, storage, and deployed applications; and possibly limited control of select networking components (e.g., host firewalls).''}\cite{nistsp800-145}
+Az infrastruktúra, mint szolgáltatás az előfizető számára rendelkezésre bocsájt olyan feldolgozási, tárhely, hálózati és egyéb alapvető számítási erőforrásokat, ahol az előfizető képes telepíteni és futtatni tetszőleges szoftvert, amely szoftver magába foglalhatja magát az operációs rendszert és egyéb alkalmazásokat is. Az előfizető nem kezeli a szolgáltatás alapjául szolgáló infrastruktúrát, de irányítása alá tartozik az operációs rendszer, a tárhely és a telepített alkalmazások; esetleg korlátozottan hálózati komponensek (pl. tűzfalak).\cite{nistsp800-145}
+
+IaaS is the leasing of infrastructure (computing resources and storage) as a service. This means not only virtualized computers with guaranteed processing power but reserved bandwidth for storage and Internet access. In essence, it's the capability of leasing a computer or data center with specific quality-of-service constraints that has the ability to execute an arbitrary operating system and software.\cite{ccwlinux}
+
+
+
+
 
 \todo{IaaS}
 \subsubsection{Platform, mint szolgáltatás (\foreignlanguage{english}{Platform-as-a-Service, PaaS})}

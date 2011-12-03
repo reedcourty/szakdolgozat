@@ -10,6 +10,9 @@ A webes LSM-ek általában a három rétegű architektúrát követik. Ez a hár
 \end{figure}
 
 \Aref{fig:3tier_simple_001}.~ábrán látható móddal ellentétben a rétegeknek nem szükséges fizikailag is külön hardverre kerülni (sőt az alkalmazás- és webkiszolgáló-réteg esetében ez nem is mindig lehetséges), így a legegyszerűbb kialakítás akár egy számítógépet is igénybe vehet. Ez a megoldás egy viszonylag erős konfiguráció és alacsony felhasználószám esetén működhet.
+
+\todo{Minden réteghez írni, hogy LMS szempontjából mi a fontos, milyen megvalósítások vannak, stb.}
+
 \subsection{A webkiszolgáló-réteg}
 A webkiszolgáló-réteg feladatát egy szolgáltatás látja el, amely futhat egy vagy több példányban, és egy példány futhat egy vagy több számítógépen is. Ez a szolgáltatás felelős azért, hogy a kliensek kérésének megfelelően előálljon a weblap, vagyis a kliensek kérésre kapjanak egy HTML dokumentumot, amelyet a felhasználói oldalon jelenítenek meg.
 A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes, nyílt forráskódú (pl. Apache), és kereskedelmi termék is (Microsoft IIS).
@@ -23,7 +26,7 @@ A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes
 \end{figure} 
 
 \todo{Még valami a webszerverekről?}
-
+ 
 \subsection{Az alkalmazásréteg}
 Az alkalmazásréteg feladatát az alkalmazás szerver látja el. Az alkalmazás szerver egy olyan biztosított környezet, ahol alkalmazások futhatnak, és amely környezet szempontjából lényegtelen, hogy mik ezek az alkalmazások és mit csinálnak.\cite{serverside} Az alkalmazás szerver eljárások (programok, rutinok, szkriptek) hatékony végrehajtására dedikált erőforrás.
 
