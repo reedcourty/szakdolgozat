@@ -28,14 +28,11 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
 
 Mélyebb elemzés során azonban a felhőt rétegekre lehet bontani, amely rétegeket a következő alfejezetben részletezném.
 
-\subsection{A felhő rétegei}
+\subsection{A felhő szolgáltatási modelljei}
 
-\todo{Ezek lehet inkább szolgáltatás modellek?}
+A felhő napjainkban négy szolgáltatási modellt tartalmaz, amelyek valamilyen szinten egymásra épülnek, ám nem feltétlenül határolhatóak el egzaktul egymástól. \Aref{fig:cloud_retegek}.~ábrán egy réteges felosztás látható, amely körülbelül azt hivatott kifejezni, hogy alulról fölfelé hogyan csökken a szolgáltatások felhasználó által igénybe vehető része.
 
-\todo{XaaS service ábrán ne legyen kidomborítva, hogy egymásra épülnek!}
-
-A felhő napjainkban négy architekturális rétegből épül fel, amelyeket alulról fölfelé érdemes megvizsgálni.
-
+\todo{Ez így lehet értelmetlen!} 
 
 \begin{figure}[h!]
 \centering
@@ -50,13 +47,11 @@ A felhő napjainkban négy architekturális rétegből épül fel, amelyeket alu
 \end{figure}
  
 \subsubsection{Adattár, mint szolgáltatás (\foreignlanguage{english}{data-Storage-as-a-Service, dSaaS})}
-Ezt a réteget \todo{szolgáltatást???} nem minden irodalom szokta említeni, ám én itt mégis külön kezelném, hiszen ez a felhő legalapvetőbb szolgáltatása. Lényege, hogy online tárhelyet biztosít a felhasználóknak. Ilyen szolgáltatást nyújt pl. a \href{http://www.dropbox.com}{Dropbox.com} (főleg személyes felhasználásra, biztonsági mentés, megosztás céljából) vagy az \href{https://aws.amazon.com/s3/}{Amazon S3} (inkább nagy szolgáltatók használják).
+Ezt a szolgáltatást nem minden irodalom szokta említeni, ám én itt mégis külön kezelném, hiszen ez a felhő legalapvetőbb szolgáltatása. Lényege, hogy online tárhelyet biztosít a felhasználóknak. Ilyen szolgáltatást nyújt pl. a \href{http://www.dropbox.com}{Dropbox.com} (főleg személyes felhasználásra, biztonsági mentés, megosztás céljából) vagy az \href{https://aws.amazon.com/s3/}{Amazon S3} (inkább nagy szolgáltatók használják).
 
 A dSaaS oktatási rendszerek esetében sok, nagyméretű adatok esetén lehet előnyös, hiszen nem kell a saját szerverünkön tárolni ezeket, megspórolva ezzel saját adattároló rendszer kialakítását, üzemeltetését. Érdemes megjegyezni, hogy sok adatpéldány esetén is érdemes lehet hasonló szolgáltatás használata, hiszen ebben az esetben az autentikációhoz kötött adatoknál már nem kell a session-öket kezelni, az adatok elérhetőségét megadó URL már tartalmaz egy kódot, csökkentve ezzel a web és alkalmazás szerver terheltségét. 
 
 \todo{dSaaS-ról még valami?}
-
-\todo{Ha a két ábrát össze kellene lőni, ez a legalsó réteg?}
 
 \subsubsection{Infrastuktúra, mint szolgálatás (\foreignlanguage{english}{Infrastructure-as-a-Service, IaaS})}
 
@@ -64,7 +59,7 @@ Az infrastruktúra, mint szolgáltatás az előfizető számára rendelkezésre 
 
 Az IaaS az infrastruktúra (számítási erőforrások és tárhely) bérbeadása. Ez nem csak virtualizált számítógépeket jelent garantált számítási teljesítménnyel, de fenntartott sávszélességet a tárhely és az internet elérésnek is. Lényegében a lehetősége egy számítógép vagy adatközpont bérvételének, specifikált szolgáltatásminőség (QoS) megkötésekkel, amelyekkel képesek vagyunk egy tetszőleges operációs rendszer és szoftver futtatására.\cite{ccwlinux}
 
-A legismertebb IaaS szolgáltatók az Amazon (Amazon EC2 \href{https://aws.amazon.com/ec2/}{https://aws.amazon.com/ec2/}) és a Rackspace (\href{http://www.rackspace.com/}{http://www.rackspace.com/}) A különböző IaaS-t nyújtó cégek szolgáltatásai nagyjából hasonlóak. A felhasználók előre beállított konfigurációk közül választhatják ki a nekik megfelelőt. Ezek a konfigurációk erőforrásokban, előre telepített operációs rendszerekben\footnote{Nem csak ingyenes OS-eket, de fizetős (pl. Microsoft) termékeket is igénybe vehetünk, ahol a licenc ára a felhasználás idejének arányában oszlik el, így nekünk nem kell foglalkoznunk a szoftver beszerzésével.} és árban különbözhetnek.
+A legismertebb IaaS szolgáltatók az Amazon (Amazon EC2: \href{https://aws.amazon.com/ec2/}{https://aws.amazon.com/ec2/}) és a Rackspace (\href{http://www.rackspace.com/}{http://www.rackspace.com/}) A különböző IaaS-t nyújtó cégek szolgáltatásai nagyjából hasonlóak. A felhasználók előre beállított konfigurációk közül választhatják ki a nekik megfelelőt. Ezek a konfigurációk erőforrásokban, előre telepített operációs rendszerekben\footnote{Nem csak ingyenes OS-eket, de fizetős (pl. Microsoft) termékeket is igénybe vehetünk, ahol a licenc ára a felhasználás idejének arányában oszlik el, így nekünk nem kell foglalkoznunk a szoftver beszerzésével.} és árban különbözhetnek.
 
 Egy LMS üzemeltetésével foglalkozó szervezet esetén rengeteg előnyt jelenthet a rendszer felhőben való üzemeltetése. Az IaaS elasztikus tulajdonságának köszönhetően gyorsan tudjuk a változó erőforrásigényeket kielégíteni. Ezek a szolgáltatások idő és teljesítmény alapú számlázást használnak, így jó közelítéssel előre meghatározhatóak a költségek. A szolgáltatók nagy rendelkezésre állást biztosítanak, így nem fordulhat elő, hogy a rendszerünk nem érhető el. Természetesen ezen a szinten még szükségünk van IT munkatársakra, hiszen a rendszert fel kell építeni, és szoftveres szinten karban kell tartani, de már a hardveres szint hiánya is egyszerűsítheti a munkát.
 
@@ -79,6 +74,8 @@ A PaaS hasonló az IaaS-hoz, de olyan operációs rendszereket és kötelező sz
 A piacon több PaaS szolgáltató találunk, ezek közül szedtem össze néhányat \aref{tab:paas_providers}.~táblázatba.
 
 \input{tablazat_paas_providers} 
+
+A Zend PHP Cloud Application Platform nem igazi szolgáltatás, csak egy platform, amelyet pl. Amazon EC2-re lehet telepíteni, mint ahogy a SpringSource is szintén egy telepíthető platform VMware vFabric Cloud Application Platform alapokon.
 
 \todo{PaaS}
 \subsubsection{Szoftver, mint szolgáltatás (\foreignlanguage{english}{Software-as-a-Service,SaaS})}
