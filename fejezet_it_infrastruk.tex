@@ -22,7 +22,7 @@ Cloud computing is a model for enabling ubiquitous, convenient, on-demand networ
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1.0\textwidth]{figures/Cloud_computing_hu.png}
+\includegraphics[width=0.80\textwidth]{figures/Cloud_computing_hu.png}
 \caption{A számítási felhő (\foreignlanguage{english}{cloud computing}) (Forrás: \href{https://en.wikipedia.org/wiki/File:Cloud\_computing.svg}{Wikipedia})} \label{fig:cloud_computing_hu}
 \end{figure}
 
@@ -30,7 +30,7 @@ Mélyebb elemzés során azonban a felhőt rétegekre lehet bontani, amely réte
 
 \subsection{A felhő szolgáltatási modelljei}
 
-A felhő napjainkban négy szolgáltatási modellt tartalmaz, amelyek valamilyen szinten egymásra épülnek, ám nem feltétlenül határolhatóak el egzaktul egymástól. \Aref{fig:cloud_retegek}.~ábrán egy réteges felosztás látható, amely körülbelül azt hivatott kifejezni, hogy alulról fölfelé hogyan csökken a szolgáltatások felhasználó által igénybe vehető része.
+A felhő napjainkban négy szolgáltatási modellt tartalmaz, amelyek valamilyen szinten egymásra épülnek, ám nem feltétlenül határolhatóak el egzaktul egymástól. \Aref{fig:cloud_retegek}.~ábrán a felhő egy réteges felosztás látható, amely körülbelül azt hivatott kifejezni, hogy alulról fölfelé hogyan csökken a szolgáltatások felhasználó által igénybe vehető része.
 
 \todo{Ez így lehet értelmetlen!} 
 
@@ -39,6 +39,8 @@ A felhő napjainkban négy szolgáltatási modellt tartalmaz, amelyek valamilyen
 \includegraphics[width=0.25\textwidth]{figures/cloud_retegek.png}
 \caption{A számítási felhő rétegei \label{fig:cloud_retegek}}
 \end{figure}
+
+A négy szolgáltatási modellt és néhány hozzájuk kapcsolódó szolgáltató cég logója látható \aref{fig:cloud_service_models}.~ábrán.
 
 \begin{figure}[h!]
 \centering
@@ -77,7 +79,10 @@ A piacon több PaaS szolgáltató találunk, ezek közül szedtem össze néhán
 
 A Zend PHP Cloud Application Platform nem igazi szolgáltatás, csak egy platform, amelyet pl. Amazon EC2-re lehet telepíteni, mint ahogy a SpringSource is szintén egy telepíthető platform VMware vFabric Cloud Application Platform alapokon.
 
-\todo{PaaS}
+A PaaS egy környezetet biztosít az alkalmazásunknak, amely lehet akár egy LMS is. Az IaaS-szel ellentétben itt már nem kell foglalkoznunk az OS üzemeltetésével járó feladatokkal, csak is magával az LMS alkalmazással, amelyet nekünk kell telepíteni, vagy adott esetben a platformra lefejleszteni. Ugyanakkor az IaaS-nél megjelent előnyök itt is érvényesek, mind üzemeltetés, mind költség szempontjából.
+
+\todo{PaaS-ról még valami?}
+
 \subsubsection{Szoftver, mint szolgáltatás (\foreignlanguage{english}{Software-as-a-Service,SaaS})}
 
 \foreignlanguage{english}{''The capability provided to the consumer is to use the provider’s applications running on a cloud infrastructure. A cloud infrastructure is the collection of hardware and software that enables the five essential characteristics of cloud computing. The cloud infrastructure can be viewed as containing both a physical layer and an abstraction layer. The physical layer consists of the hardware resources that are necessary to support the cloud services being provided, and typically includes server, storage and network components. The abstraction layer consists of the software deployed across the physical layer, which manifests the essential cloud characteristics.  Conceptually the abstraction layer sits above the physical layer. The applications are accessible from various client devices through either a thin client interface, such as a web browser (e.g., web-based email), or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings.''}\cite{nistsp800-145}
