@@ -23,7 +23,9 @@ A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes
 \centering
 \includegraphics[width=1.0\textwidth]{figures/wpid-overallc.png}
 \caption{A legelterjedtebb webszerverek piaci részesedése (2011. november, forrás: \href{http://news.netcraft.com/archives/2011/11/07/november-2011-web-server-survey.html}{Netcraft.com}) \label{fig:netcraft_webservers}}
-\end{figure} 
+\end{figure}
+
+Az oktatás támogató rendszerek szempontjából fontos, hogy a működtetett webkiszolgáló képes legyen nagy számú konkurens kérés kiszolgálására, vagy könnyen skálázható, elosztható legyen.
 
 \todo{Még valami a webszerverekről?}
  
@@ -36,6 +38,8 @@ Az első alkalmazás szerverek megjelenésekor fő feladatuk volt, hogy webes al
 
 \subsection{Az adatbázisréteg}
 Az adatbázis réteg feladatait az adatbázis szerver látja el. Adatbázis szervernek nevezünk egy dedikált szolgáltatást, ami adatbázisokat tesz elérhető, kezelhetővé. Valójában egy felületet biztosít az alkalmazás rétegben található adatfelhasználó alkalmazás és maguk a felhasználandó adatok között.
+
+Az LMS-es oldaláról igény, hogy a használt adatbázis képes legyen nagy számú konkurens tranzakcióra, és optimálisan tároljon nagy, multimédiás adatokat is.
 
 \todo{Adatbázisrétegről mit lehet még?}
 

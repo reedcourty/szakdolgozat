@@ -35,7 +35,7 @@ A felhőkkel kapcsolatban az irodalom\cite{nistsp800-145} 5 alapvető tulajdons�
 \foreignlanguage{english}{''A consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed automatically without requiring human interaction with each service provider.''}\cite{nistsp800-145}
 \end{comment}
 
-Az előfizető vagy felhasználó egyoldalúan tudja módosítani a számítási kapacitást, mint a szerver időt \todo{AUCS} és hálózati tárhelyet automatikusan, amint arra szükség van, szükséges emberi interakció nélkül, mindegyik szolgáltatónál.
+Az előfizető vagy felhasználó egyoldalúan tudja módosítani a számítási kapacitást, mint a processzoridőt és hálózati tárhelyet automatikusan, amint arra szükség van, szükséges emberi interakció nélkül, mindegyik szolgáltatónál.
 
 \subsubsection{Széles körű hálózati elérés(\foreignlanguage{english}{Broad network access})}
 
@@ -166,6 +166,8 @@ A telepítés és kivitelezés szempontjából négy féle felhő infrastruktúr
 
 A felhő infrastruktúrát kizárólagosan egy egyedüli szervezet használja, amely magába foglal több előfizetőt (pl. üzleti egységeket). Lehet a szervezet saját tulajdona, kezelheti és üzemeltetheti maga a szervezet, de akár egy harmadik fél, vagy a kettőnek kombinációja, és lehet telephelye, de nem szükségszerű.
 
+Privát felhő lehet egy egyetem által üzemeltetett infrastruktúra, amely lehetőséget biztos arra, hogy az egyetem tanszékei használhassák a felhő erőforrásait.
+
 \subsubsection{Közösségi számítási felhő (\foreignlanguage{english}{Community cloud})}
 
 \begin{comment}
@@ -174,13 +176,17 @@ A felhő infrastruktúrát kizárólagosan egy egyedüli szervezet használja, a
 
 A felhő infrastruktúrát kizárólagosan előfizetők egy specifikus közössége használja, mely előfizetők olyan szervezetekből kerülnek ki, amely szervezeteknek közös vonatkozásai vannak (pl. megbízás, biztonsági követelmények, irányvonal és teljesítési tényező). A tulajdonosa lehet egy vagy több szervezet a közösségből, harmadik fél vagy ezek kombinációja, és ugyanezek a szervezetek kezelhetik és üzemeltethetik, és lehet telephelye, de nem szükségszerű.
 
+Közösségi felhő lehet egy egyetemek által üzemeltetett felhő szolgáltatás, amely oktatás támogató rendszerek üzemeltetését, vagy számítási kapacitás megosztását teszi lehetővé a résztvevő egyetemek számára. 
+
 \subsubsection{Publikus számítási felhő (\foreignlanguage{english}{Public cloud})}
 
 \begin{comment}
 \foreignlanguage{english}{''The cloud infrastructure is provisioned for open use by the general public. It may be owned, managed, and operated by a business, academic, or government organization, or some combination of them.  It exists on the premises of the cloud provider.''}\cite{nistsp800-145}
 \end{comment}
 
-A felhő infrastruktúrát az általános közösség nyíltan használhatja. A tulajdonosa lehet egy üzlet, tudományos/oktatási intézet, kormányzati szerv vagy ezek kombinációja, és ugyanezek a szervezetek kezelhetik és üzemeltethetik. A telephelye a felhő szolgáltatónál van. 
+A felhő infrastruktúrát az általános közösség nyíltan használhatja. A tulajdonosa lehet egy üzlet, tudományos/oktatási intézet, kormányzati szerv vagy ezek kombinációja, és ugyanezek a szervezetek kezelhetik és üzemeltethetik. A telephelye a felhő szolgáltatónál van.
+
+Az Amazon és Google által nyújtott szolgáltatások publikus felhő szolgáltatásoknak számítanak.
 
 \subsubsection{Hibrid számítási felhő (\foreignlanguage{english}{Hybrid cloud})}
 
@@ -188,3 +194,6 @@ A felhő infrastruktúrát az általános közösség nyíltan használhatja. A 
 \foreignlanguage{english}{''The cloud infrastructure is a composition of two or more distinct cloud infrastructures (private, community, or public) that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application portability (e.g., cloud bursting for load balancing between clouds).''}\cite{nistsp800-145}
 \end{comment}
 
+A felhő infrastruktúra kettő vagy több eltérő felhő infrastruktúra (privát, közösségi vagy nyilvános) összeállítása, amelyben megmaradnak az egyedi entitások, de össze vannak kötve szabványosított vagy szabadalmaztatott technológiával, amely lehetővé teszi az adat és alkalmazás portabilitást (pl. felhők közötti terhelés elosztás).
+
+Egy hibrid számítási felhő megvalósítása lehet például ha egy oktatási intézmény saját szervereken üzemeltet LMS-t privát felhőben, és publikus felhő szolgáltatást vesz igénybe pl. az oktatási anyagok tárolásához. 
