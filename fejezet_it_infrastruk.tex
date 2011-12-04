@@ -48,7 +48,7 @@ A webkiszolgáló réteg rendelkezésre állásának növelésére az egyik legg
 A megoldás előnye, hogy rugalmasan skálázható, hiszen webkiszolgálókat elvehetünk és hozzáadhatunk a rendszerhez anélkül, hogy ebből a külvilág bármit is észrevenne. Hátránya, hogy a DNS szerver esetlegesen SPOF-ként (\angolul{Single Point of Failure}) viselkedhet, hiszen kiesése esetén a kérések nem jutnak el a webszervereinkhez. Természetesen a DNS szerverek példányszámának növelésével ez a probléma megoldható.
 
 Az előző megoldásnál fontos, hogy ugyanaz a kliens ugyanahhoz a szerverhez kapcsolódjon egy \angolul{session} ideje alatt, kivéve ha a \angolul{session} kezelés az adatbázisrétegben kerül megvalósításra.
-Erre a problémára nyújthat megoldást például az Apache webszerver beépített \textit{mod\_proxy\_balancer} modulja, amely kezeli ezeket a sessionöket, és terheléselosztást is megvalósít. 
+Erre a problémára nyújthat megoldást például az Apache (\href{https://httpd.apache.org/}{https://httpd.apache.org/}) webszerver beépített \textit{mod\_proxy\_balancer} modulja, amely kezeli ezeket a sessionöket, és terheléselosztást is megvalósít. Természetesen nem csak az Apache, de például a lighttpd (\href{http://www.lighttpd.net}{http://www.lighttpd.net}) és a nginx (\href{http://www.nginx.org/}{http://www.nginx.org/}) is rendelkezik beépített load balancing funkciókkal.
 
 \section{Felhőalapú infrastruktúrák}
 \subsection{Mi is az a ,,számítási felhő''?}
