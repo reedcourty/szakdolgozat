@@ -54,7 +54,7 @@ Egy LMS életében a következő erőforrás igényes időszakokat különbözte
 \item kurzussal kapcsolatos feladatok beadási határideje,
 \item kurzus online teszt, vagy vizsga kitöltés (határ)ideje,
 \item egyéb a kurzussal kapcsolatos offline számonkérés,
-\item online előadás közvetítés
+\item online előadás közvetítés,
 \item audiovizuális tananyagokkal rendelkező kurzus számonkérésének ideje, 
 \end{sajat_itemize}
 és még hosszasan sorolhatnánk.
@@ -64,6 +64,29 @@ A következőekben megpróbálom összefoglalni, hogy ezek közül melyik milyen
 \subsubsection{Kurzus-/vizsgajelentkezési időszak}
 
 Sajnos a BME hallgatóinak nem ismeretlen a Neptun Egységes Tanulmányi Rendszer vizsga- és tárgyjelentkezési időszakokban történő kiesése. Ezekben az időszakokban rohamosan megnő az egyszerre aktív felhasználók száma, amivel a rendszer nem tud megbirkózni. Az üzemeltetés mindent megtesz annak érdekében, hogy a rendszer működőképes legyen a több ezer felhasználó esetén is, de valamelyik rétegben egy-egy erőforrás nem tudja feldolgozni a kéréseket, ami az egész rendszerre kihatással van.
+
+\cite{neptun1,neptun2,neptun3,neptun4,neptun5}
+
+\todo{Neptunos írást befejezni!}
+
+\subsubsection{Kurzussal kapcsolatos feladatok beadási határideje}
+
+Hallgatók jellemző viselkedése, hogy megpróbálják az utolsó pillanatban elkészíteni a kiadott feladatokat, amelynek következtében a határidő előtti rövid időintervallumban megnövekszik a rendszerben egyszerre tartózkodó felhasználók száma, és állományok feltöltésével esetlegesen túlterhelik a rendszer hálózatát, adatbázisát és nem előrelátó üzemeltetés esetén a tárhely szabad helyének méretében is kritikus szintet érhetnek el.
+
+\todo{Még valami?}
+
+\todo{Melyik részben jelenik meg, hogy hogyan lehet proaktívan kivédeni?}
+
+\subsubsection{Kurzus online teszt, vagy vizsga kitöltés (határ)ideje}
+
+Egy oktatási rendszerben meglehet határozni olyan időintervallumokat, amelyek egy kurzus tesztjének kitöltésére engedélyezett időszak. A tesztet az intervallum elejétől a végéig lehetséges kitölteni, azon kívül a teszt kitöltése letiltott funkció. Ezzel a felhasználók arra vannak kényszerítve, hogy az adott intervallumon belül bejelentkezzenek a rendszerbe, és kitöltsék a megadott tesztet.
+Mivel az időintervallum meghatározott (az üzemeltetés is könnyen tudomást szerezhet róla), és a várható felhasználói létszám is ismert (az adott kurzuson résztvevő felhasználók száma a maximum), azért viszonylag jól fel lehet készülni erre az erőforrással kapcsolatos igényváltozásra. Természetesen itt sem tudjuk 100\%-osan meghatározni, hogy melyik időpillanatban hány felhasználó lesz a rendszerben, és a felhasználó viselkedéstől is nagyban függ az eloszlás, de maximális értékeket meghatározhatunk. Persze nem biztos, hogy ez költség szempontjából az optimális megoldás.
+
+\subsubsection{Egyéb a kurzussal kapcsolatos offline számonkérés}
+
+\subsubsection{Online előadás közvetítés}
+
+\subsubsection{Audiovizuális tananyagokkal rendelkező kurzus számonkérésének ideje}
 
 \todo{Milyen események lehetnek, amik igényváltozással járnak?}
 
