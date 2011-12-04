@@ -43,7 +43,12 @@ Az egyes szerverek között egy állandó kapcsolat (,,\angolul{heartbeat}'') ta
 
 \subsection{Webkiszolgáló réteg}
 
-\todo{Loadbalancing} 
+A webkiszolgáló réteg rendelkezésre állásának növelésére az egyik leggyakoribb megoldás a terheléselosztás. Erre az egyik technika az ún. RRDNS, vagy Round-robin Domain Name Service. Lényege, hogy az oldalunkhoz kapcsolódó DNS bejegyzéshez több IP tartozik, mégpedig a webkiszolgáló példányaink számával megegyező. Így minden egyes DNS feloldás eredménye eltérő IP-cím lesz, a round-robin működésnek megfelelően, ezért a webszerverek közel egyenlő módon lesznek terhelve.
+
+A megoldás előnye, hogy rugalmasan skálázható, hiszen webkiszolgálókat elvehetünk és hozzáadhatunk a rendszerhez anélkül, hogy ebből a külvilág bármit is észrevenne. Hátránya, hogy a DNS szerver esetlegesen SPOF-ként (\angolul{Single Point of Failure}) viselkedhet, hiszen kiesése esetén a kérések nem jutnak el a webszervereinkhez. Természetesen a DNS szerverek példányszámának növelésével ez a probléma megoldható.
+
+Az előző megoldásnál fontos, hogy ugyanaz a kliens ugyanahhoz a szerverhez kapcsolódjon egy \angolul{session} ideje alatt, kivéve ha a \angolul{session} kezelés az adatbázisrétegben kerül megvalósításra.
+Erre a problémára nyújthat megoldást például az Apache webszerver beépített \textit{mod\_proxy\_balancer} modulja, amely kezeli ezeket a sessionöket, és terheléselosztást is megvalósít. 
 
 \section{Felhőalapú infrastruktúrák}
 \subsection{Mi is az a ,,számítási felhő''?}
