@@ -27,9 +27,15 @@ Léteznek olyan megoldások, amelyeknél csak az egyik szerverpéldány (\angolu
 
 Az ún. \angolul{multimaster} megoldás esetén minden példány írható és olvasható is, ám ekkor sokkal bonyolultabb a szinkronizáció megvalósítása.
 
+\todo{Megvalósítások MySQL-nél, PostgreSQL-nél, stb.}
+
 \subsubsection{Feladatátadás hiba esetén (\angolul{failover})}
 
-\todo{Klaszterek, replikák, stb.}
+A feladatátadás egy olyan technika, amelynek során bármilyen szoftveres/hardveres hiba, vagy rendellenes működés eseten az egyik erőforrástól egy redundáns vagy készenléti erőforrás automatikusan, esetleg manuálisan átveszi az adott feladat végrehajtását.
+
+Az egyes szerverek között egy állandó kapcsolat (,,\angolul{heartbeat}'') található. Amennyiben az egyik szerver oldaláról megszűnne a ,,\angolul{heartbeat}'', úgy a másik amilyen hamar csak lehetséges átveszi a meghibásodott kiszolgáló feladatát. Mihelyt a kiesett szerver újra működőképes a másodlagos szerver visszaadja neki a feladat végrehajtásának jogát.
+
+\todo{Megvalósítások MySQL-nél, PostgreSQL-nél, stb.}
 
 \subsection{Alkalmazás réteg}
 
