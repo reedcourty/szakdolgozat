@@ -50,7 +50,7 @@ Az LMS-ek esetében a terhelés változások okozói elsősorban maguk a felhasz
 
 Egy LMS életében a következő erőforrás igényes időszakokat különböztethetjük meg:
 \begin{sajat_itemize}
-\item kurzus/vizsga jelentkezési időszak,
+\item kurzus-/vizsgajelentkezési időszak,
 \item kurzussal kapcsolatos feladatok beadási határideje,
 \item kurzus online teszt, vagy vizsga kitöltés (határ)ideje,
 \item egyéb a kurzussal kapcsolatos offline számonkérés,
@@ -58,6 +58,12 @@ Egy LMS életében a következő erőforrás igényes időszakokat különbözte
 \item audiovizuális tananyagokkal rendelkező kurzus számonkérésének ideje, 
 \end{sajat_itemize}
 és még hosszasan sorolhatnánk.
+
+A következőekben megpróbálom összefoglalni, hogy ezek közül melyik milyen módon terheli meg a rendszerünk erőforrásai.
+
+\subsubsection{Kurzus-/vizsgajelentkezési időszak}
+
+Sajnos a BME hallgatóinak nem ismeretlen a Neptun Egységes Tanulmányi Rendszer vizsga- és tárgyjelentkezési időszakokban történő kiesése. Ezekben az időszakokban rohamosan megnő az egyszerre aktív felhasználók száma, amivel a rendszer nem tud megbirkózni. Az üzemeltetés mindent megtesz annak érdekében, hogy a rendszer működőképes legyen a több ezer felhasználó esetén is, de valamelyik rétegben egy-egy erőforrás nem tudja feldolgozni a kéréseket, ami az egész rendszerre kihatással van.
 
 \todo{Milyen események lehetnek, amik igényváltozással járnak?}
 
