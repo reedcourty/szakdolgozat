@@ -80,13 +80,24 @@ Hallgatók jellemző viselkedése, hogy megpróbálják az utolsó pillanatban e
 \subsubsection{Kurzus online teszt, vagy vizsga kitöltés (határ)ideje}
 
 Egy oktatási rendszerben meglehet határozni olyan időintervallumokat, amelyek egy kurzus tesztjének kitöltésére engedélyezett időszak. A tesztet az intervallum elejétől a végéig lehetséges kitölteni, azon kívül a teszt kitöltése letiltott funkció. Ezzel a felhasználók arra vannak kényszerítve, hogy az adott intervallumon belül bejelentkezzenek a rendszerbe, és kitöltsék a megadott tesztet.
+
 Mivel az időintervallum meghatározott (az üzemeltetés is könnyen tudomást szerezhet róla), és a várható felhasználói létszám is ismert (az adott kurzuson résztvevő felhasználók száma a maximum), azért viszonylag jól fel lehet készülni erre az erőforrással kapcsolatos igényváltozásra. Természetesen itt sem tudjuk 100\%-osan meghatározni, hogy melyik időpillanatban hány felhasználó lesz a rendszerben, és a felhasználó viselkedéstől is nagyban függ az eloszlás, de maximális értékeket meghatározhatunk. Persze nem biztos, hogy ez költség szempontjából az optimális megoldás.
 
 \subsubsection{Egyéb a kurzussal kapcsolatos offline számonkérés}
 
+Napjainkban egyre több oktatási anyag kerül fel online tárhelyre, amelyet az LMS-ek alapból támogatnak. Egy-egy számonkérés előtt megnövekedhet ezen oktatási anyagok letöltésének száma, amely az anyag méretétől, számától és a kurzusra jelentkezett felhasználók számától függően terhelheti az adatbázist és a hálózatot.
+
+Ebben az esetben a feltöltésekhez hasonlóan nem lehetséges biztos modellt alkotni az erődforrásigények változásáról, hiszen itt is nagyban függünk a felhasználói viselkedéstől. Míg folyamatosan készülő diákok az egész félévben elosztott terhelést jelentenek, addig az utolsó pillanatosok a számonkérés előtt nem sokkal terhelhetik a rendszert. 
+
 \subsubsection{Online előadás közvetítés}
 
+Az Internet térnyerésével, és a széles sávú kapcsolatok terjedésével megjelent az \angolul{online stream} lehetősége. Egy ilyen közvetítés egy bizonyos időintervallumban terhelheti a hálózatunkat. Az elérhetőségének korlátozásával (pl. csak az adott kurzust felvett felhasználók nézhetik) a maximális nézőszámot is meg tudjuk előre határozni. Tehát összességében egy ilyen eseményre viszonylag jól fel tudjuk készíteni a rendszerünket erőforrások szempontjából.  
+
 \subsubsection{Audiovizuális tananyagokkal rendelkező kurzus számonkérésének ideje}
+
+Ez az eset az online közvetítés és a számonkérések egyvelege. Mivel a számonkérés ideje rögzített, így addig az időpontig számíthatunk arra, hogy a rendszerünket az adott kurzus felhasználói terhelni fogják. A terhelés főleg a hálózatot fogja érinteni.
+
+Nagyon eltérő terheléseket kaphatunk attól függően, hogy az oktatási anyag letölthető-e vagy csak online nézhető. Az előbbi esetben nagyobb az esély az időben jobban szétkenődő erőforrásigény növekedésekre, míg az utóbbinál a határidő előtt nagy konkurens felhasználói számmal és igénynövekedéssel kell számolnunk. Ennek oka lehet, hogy az online elérhető anyagot a számonkérés előtt nem sokkal fogják megnézni a felhasználók, amivel a rendszerünket terhelik. Ellenben a letölthető anyag esetében meg van az a lehetőség, hogy néhány felhasználó már jóval a határidő előtt letölti azt, így csökkentve a maximális felhasználók számát a kritikus időpontban.
 
 \todo{Milyen események lehetnek, amik igényváltozással járnak?}
 
