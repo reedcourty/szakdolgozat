@@ -12,6 +12,15 @@ Az adatbázisok esetében három eltérő megvalósítást szoktak alkalmazni, a
 
 \subsubsection{Terheléselosztás (\angolul{load balancing})}
 
+Az adatbázisszerverek képesek együtt működni abból a célból, hogy csökkentség az egy példányra jutó kérések számát. Az úgynevezett terheléselosztás megvalósítása nem egyszerű adatbázisok esetén, hiszen a szerver példányoknak ugyanazt az adathalmazt kell kezelniük.
+
+Csak olvasás esetén ez nem jelent problémát, mivel minden szerver példány ugyanazzal az adattal rendelkezik, ebből kifolyólag a terheléselosztó bármelyiknek is küldi tovább a kérést, ugyanazt az adatot fogja visszaadni.
+Írási műveletek esetén már bonyolultabb a megvalósítás, hiszen a kérés eredményének valamilyen megoldással minden egyes szerver példányhoz el kell jutnia. Erre különböző szinkronizálási technikák alkalmazhatók, amelyeket most itt nem áll szándékomban részletezni.
+
+\subsubsection{Replikálás}
+
+\subsubsection{Feladatátadás hiba esetén (\angolul{failover})}
+
 \todo{Klaszterek, replikák, stb.}
 
 \subsection{Alkalmazás réteg}
