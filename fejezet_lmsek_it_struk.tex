@@ -11,8 +11,6 @@ A webes LSM-ek általában a három rétegű architektúrát követik. Ez a hár
 
 \Aref{fig:3tier_simple_001}.~ábrán látható móddal ellentétben a rétegeknek nem szükséges fizikailag is külön hardverre kerülni (sőt az alkalmazás- és webkiszolgáló-réteg esetében ez nem is mindig lehetséges), így a legegyszerűbb kialakítás akár egy számítógépet is igénybe vehet. Ez a megoldás egy viszonylag erős konfiguráció és alacsony felhasználószám esetén működhet.
 
-\todo{Minden réteghez írni, hogy LMS szempontjából mi a fontos, milyen megvalósítások vannak, stb.}
-
 \subsection{A webkiszolgáló-réteg}
 A webkiszolgáló-réteg feladatát egy szolgáltatás látja el, amely futhat egy vagy több példányban, és egy példány futhat egy vagy több számítógépen is. Ez a szolgáltatás felelős azért, hogy a kliensek kérésének megfelelően előálljon a weblap, vagyis a kliensek kérésre kapjanak egy HTML dokumentumot, amelyet a felhasználói oldalon jelenítenek meg.
 A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes, nyílt forráskódú (pl. Apache), és kereskedelmi termék is (Microsoft IIS).
@@ -25,23 +23,19 @@ A piacon több webkiszolgáló alkalmazást találunk, ezek közül van ingyenes
 \caption{A legelterjedtebb webszerverek piaci részesedése (2011. november, forrás: \href{http://news.netcraft.com/archives/2011/11/07/november-2011-web-server-survey.html}{Netcraft.com}) \label{fig:netcraft_webservers}}
 \end{figure}
 
-Az oktatás támogató rendszerek szempontjából fontos, hogy a működtetett webkiszolgáló képes legyen nagy számú konkurens kérés kiszolgálására, vagy könnyen skálázható, elosztható legyen.
-
-\todo{Még valami a webszerverekről?}
+Az oktatás támogató rendszerek szempontjából fontos, hogy a működtetett webkiszolgáló képes legyen nagy számú konkurens kérés kiszolgálására, vagy könnyen skálázható, elosztható legyen. LMS-ek esetén is ugyanazokat a webkiszolgálókat lehet használni, mint amit más egyéb webes alkalmazások esetén (pl. Apache, Microsoft IIS, lighttpd, ngnix, stb.).
  
 \subsection{Az alkalmazásréteg}
 Az alkalmazásréteg feladatát az alkalmazás szerver látja el. Az alkalmazás szerver egy olyan biztosított környezet, ahol alkalmazások futhatnak, és amely környezet szempontjából lényegtelen, hogy mik ezek az alkalmazások és mit csinálnak.\cite{serverside} Az alkalmazás szerver eljárások (programok, rutinok, szkriptek) hatékony végrehajtására dedikált erőforrás.
 
 Az első alkalmazás szerverek megjelenésekor fő feladatuk volt, hogy webes alkalmazások esetén a webszerver által megjeleníthető tartalmat állítsanak elő. Ezen továbblépve napjainkban már nem csak az oldalgenerálás funkciója jelenik meg ebben a rétegben, hanem egyéb szolgáltatásokat is implementálnak, mint például klaszterszervezést, terheléselosztást, hibaátállást. Ezen funkciókkal elérhető, hogy az alkalmazásfejlesztőknek csak az üzleti logikával kelljen foglalkozni.
 
-\todo{Alkalmazás szerverről mit lehetne még?}
+Az LMS-ek lényegi része ebben a rétegben kerül megvalósításra. Mivel a ténylegesen alkalmazott platformtól függ, hogy milyen alkalmazás szervert használunk, ezért alapvetően erről az oldalról nincs megkötés. Ám érdemes figyelembe venni, hogy a kiválasztott platform mennyire skálázható, milyen teljesítményt nyújt a különböző terhelésekre. A legelterjedtebb LMS-ek fejlesztésére használt platformok itt is, mint más webes rendszereknél, a PHP, Java és .Net.
 
 \subsection{Az adatbázisréteg}
 Az adatbázis réteg feladatait az adatbázis szerver látja el. Adatbázis szervernek nevezünk egy dedikált szolgáltatást, ami adatbázisokat tesz elérhető, kezelhetővé. Valójában egy felületet biztosít az alkalmazás rétegben található adatfelhasználó alkalmazás és maguk a felhasználandó adatok között.
 
-Az LMS-es oldaláról igény, hogy a használt adatbázis képes legyen nagy számú konkurens tranzakcióra, és optimálisan tároljon nagy, multimédiás adatokat is.
-
-\todo{Adatbázisrétegről mit lehet még?}
+Az LMS-es oldaláról igény, hogy a használt adatbázis képes legyen nagy számú konkurens tranzakcióra, és optimálisan tároljon nagy, multimédiás adatokat is. Főleg a költségvetéstől és az üzemeltetéstől függően lehet MySQL, PostgreSQL, Microsoft SQL Server vagy Oracle adatbázisszerver is, de természetesen attól is függ, hogy az LMS melyiket támogatja. 
 
 \section{Egy példa}
 \subsection{A Moodle rendszer}
@@ -51,7 +45,7 @@ A Moodle  egy ingyenes és nyílt forrású LMS vagy VLE (Virtual Learning Envir
 
 Maga a rendszer tervezéséből és implementálásából eredően portábilis, hála a PHP nyelvnek. Módosítás nélkül telepíthető Unix, Linux variánsokra, FreeBSD-re, Windows-ra, Mac OS X-re, NetWare-re és egyéb rendszerekre, amelyek támogatják a PHP-t és az ismertebb adatbázis-kezelő rendszereket.
 
-A Moodle architektúrájában elválik a natív adatbázis-kezelő a felsőbb rétegektől. Közöttük egy ADOdb adatbázis absztrakciós réteg található. Az ADOdb egy különálló projekt (\href{http://adodb.sourceforge.net/}{http://adodb.sourceforge.net/}), amely a legelterjedtebb adatbázis-kezelőket támogatja. \Aref{fig:moodlearch}.~ábrán egy korábbi verzió architektúrája látható.
+A Moodle architektúrájában elválik a natív adatbázis-kezelő a felsőbb rétegektől. Közöttük egy ADOdb adatbázis absztrakciós réteg található. Az ADOdb egy különálló projekt \\ (\href{http://adodb.sourceforge.net/}{http://adodb.sourceforge.net/}), amely a legelterjedtebb adatbázis-kezelőket támogatja. \Aref{fig:moodlearch}.~ábrán egy korábbi verzió architektúrája látható.
 
 \begin{figure}[h!]
 \centering

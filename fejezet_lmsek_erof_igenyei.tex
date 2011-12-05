@@ -37,10 +37,8 @@ A Moodle hardveres erőforrásigényei a következők:
 \end{sajat_itemize}
 Érdemes megjegyezni, hogy a hivatalos Moodle oldalon 1 GB memóriát ajánlanak 50 felhasználó egyszerre történő kiszolgálásához.
 Természetesen ez még nem a teljes rendszer igénye, hiszen a webkiszolgálónak és az adatbázisszervernek is van erőforrásigénye \cite{moodleinst}.
- 
-\todo{CPU}
 
-\todo{I/O}
+A processzor oldaláról nincs különösebb megkötés, a manapság már általánosnak mondható kétmagos, 1,5 GHz-es processzor már elégnek bizonyulhat a rendszer működéséhez.
 
 \section{Igények terhelésváltozások esetén}
 
@@ -156,8 +154,10 @@ A Neptun esetében is megfigyelhető, hogy egy kurzus-, vagy tárgyfelvételi id
 
 Hasonlóan nem teljesen kiszámítható egy kurzus számonkérése előtti felhasználói érdeklődés. Hiszen előfordulhat, hogy két olyan kurzus esetén, amely rendelkezik írásos, és audiovizuális oktatási anyaggal, eltérő módon az egyik kurzus esetében csak az írásos segédanyagot, a másik esetben pedig a multimédiás tartalmat fogják igénybe venni, a rendszer szempontjából ezzel eltérő erőforrás igényeket generálva.
 
-\subsection{Lehetséges modell alkotások} 
+\subsection{Lehetséges modell alkotások}
 
-\todo{JMeter, logokból esetleg, nagyjából lehet csak mappelni}
+Az oktatási rendszerek esetében egy lehetséges modell alkotási lehetőség lehet az összegyűjtött monitorozási, naplózási adatok statisztikai elemzése. Ezekkel az adatokkal valamennyire jósolható egy esemény által igényelt erőforrások mennyisége, amelynek segítségével akár proaktívan is be lehet avatkozni a rendszer működésébe.
+
+\Aref{fig:neptun_003}., \ref{fig:neptun_004}. és \ref{fig:neptun_005}.~ábrákon látható grafikonokból is le lehet vonni következtetéseket a felhasználók és a rendszer felé irányuló kérések számának eloszlásáról. Hasonló módon a Munin (\href{http://munin-monitoring.org/}{http://munin-monitoring.org/}) nevű grafikus monitorozó eszközzel megoldható, hogy az LMS egyes eseményeit (pl. aktuális felhasználók, hálózati eszközök kihasználtsága, stb.) grafikonok segítségével jellemezzük. Persze mindezen grafikusan ábrázolt adatoknak csak akkor van értelme, ha mellette azt is tudjuk, hogy az éppen vizsgált időintervallumban milyen oktatással kapcsolatos események történtek (pl. teszt kitöltés, online előadás, stb.). 
 
 \todo{Borsival wadon erőforrásokról beszélni}
