@@ -114,10 +114,6 @@ A 2011. augusztus végig időszakot \aref{fig:neptun_004}.~ábra mutatja be. Miv
 
 Hallgatók jellemző viselkedése, hogy megpróbálják az utolsó pillanatban elkészíteni a kiadott feladatokat, amelynek következtében a határidő előtti rövid időintervallumban megnövekszik a rendszerben egyszerre tartózkodó felhasználók száma, és állományok feltöltésével esetlegesen túlterhelik a rendszer hálózatát, adatbázisát és nem előrelátó üzemeltetés esetén a tárhely szabad helyének méretében is kritikus szintet érhetnek el.
 
-\todo{Még valami?}
-
-\todo{Melyik részben jelenik meg, hogy hogyan lehet proaktívan kivédeni?}
-
 \subsubsection{Kurzus online teszt, vagy vizsga kitöltés (határ)ideje}
 
 Egy oktatási rendszerben meglehet határozni olyan időintervallumokat, amelyek egy kurzus tesztjének kitöltésére engedélyezett időszak. A tesztet az intervallum elejétől a végéig lehetséges kitölteni, azon kívül a teszt kitöltése letiltott funkció. Ezzel a felhasználók arra vannak kényszerítve, hogy az adott intervallumon belül bejelentkezzenek a rendszerbe, és kitöltsék a megadott tesztet.
@@ -159,5 +155,3 @@ Hasonlóan nem teljesen kiszámítható egy kurzus számonkérése előtti felha
 Az oktatási rendszerek esetében egy lehetséges modell alkotási lehetőség lehet az összegyűjtött monitorozási, naplózási adatok statisztikai elemzése. Ezekkel az adatokkal valamennyire jósolható egy esemény által igényelt erőforrások mennyisége, amelynek segítségével akár proaktívan is be lehet avatkozni a rendszer működésébe.
 
 \Aref{fig:neptun_003}., \ref{fig:neptun_004}. és \ref{fig:neptun_005}.~ábrákon látható grafikonokból is le lehet vonni következtetéseket a felhasználók és a rendszer felé irányuló kérések számának eloszlásáról. Hasonló módon a Munin (\href{http://munin-monitoring.org/}{http://munin-monitoring.org/}) nevű grafikus monitorozó eszközzel megoldható, hogy az LMS egyes eseményeit (pl. aktuális felhasználók, hálózati eszközök kihasználtsága, stb.) grafikonok segítségével jellemezzük. Persze mindezen grafikusan ábrázolt adatoknak csak akkor van értelme, ha mellette azt is tudjuk, hogy az éppen vizsgált időintervallumban milyen oktatással kapcsolatos események történtek (pl. teszt kitöltés, online előadás, stb.). 
-
-\todo{Borsival wadon erőforrásokról beszélni}
