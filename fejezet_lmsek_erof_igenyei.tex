@@ -144,7 +144,19 @@ Nagyon eltérő terheléseket kaphatunk attól függően, hogy az oktatási anya
 
 \section{Modellek}
 
+\subsection{Modellezési problémák}
 
+Az LMS-ek üzemeltetésének legnagyobb problémája, hogy nem rendelkezünk olyan modellekkel, amelyekkel 100\%-osan előre tudnánk jósolni a rendszer zavartalan működéséhez, az áteresztőképességének szinten tartásához szükséges erőforrások mennyiségét.
+
+A piacon igen sok terhelés tesztelő alkalmazást lehet találni. Ezek közül az egyik legismertebb az Apache JMeter (\href{https://jmeter.apache.org/}{https://jmeter.apache.org/}). Ez egy igen részletesen konfigurálható, elsősorban webes alkalmazások funkcionális terhelés tesztjeire készített asztali alkalmazás.
+
+Valószínűsíthető, hogy a Neptun rendszer üzemeltetése is hasonló szoftverrel próbálta tesztelni az infrastruktúrájának terhelhetőségét, de ahogy láthattuk ez nem vezetett célra. Ezekkel a szoftverekkel meg tudjuk vizsgálni, hogy a rendszerünk mekkora maximális terhelést visel el, de azt már nem tudjuk meghatározni, hogy a való életben mekkora lesz ez az érték. A probléma itt is, mint az informatika sok más területén is, a felhasználó és annak nem előre jelezhető viselkedése.
+
+A Neptun esetében is megfigyelhető, hogy egy kurzus-, vagy tárgyfelvételi időszak kezdetén maximális az aktív felhasználók száma, majd ezután az idő elteltével rohamosan csökken. Általában, hiszen bemutattunk egy olyan esetet is, amikor nem következett be az elvárt roham, mert a felhasználók már korábban elintézhették a tárgyfelvételt, ezért csak az időben szélesen elosztva jelentek meg átlagos értékek a grafikonjainkon, amikor is néhány felhasználó valószínűleg véglegesítette a tárgyait.
+
+Hasonlóan nem teljesen kiszámítható egy kurzus számonkérése előtti felhasználói érdeklődés. Hiszen előfordulhat, hogy két olyan kurzus esetén, amely rendelkezik írásos, és audiovizuális oktatási anyaggal, eltérő módon az egyik kurzus esetében csak az írásos segédanyagot, a másik esetben pedig a multimédiás tartalmat fogják igénybe venni, a rendszer szempontjából ezzel eltérő erőforrás igényeket generálva.
+
+\subsection{Lehetséges modell alkotások} 
 
 \todo{JMeter, logokból esetleg, nagyjából lehet csak mappelni}
 
