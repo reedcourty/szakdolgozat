@@ -1,0 +1,36 @@
+\chapter{IT infrastruktúrák proaktív menedzsmentje általános és oktatás támogató rendszerek esetén}
+
+\section{A proaktív menedzsment fogalma}
+
+A rendszer menedzsmentet két típusba sorolhatjuk.  Egy menedzsment rendszert \textit{reaktívnak} mondunk, ha képes gyorsan és hatékonyan reagálni a külső és belső kérelmekre a belső flexibilitás maximalizálásával. Ezt a reaktivitást a rendszer rugalmasságán alapulva decentralizált döntésekkel és a fejlesztés reflexszerű viselkedésével előre definiált szabályok segítségével érik el.\cite{aftsarapms} Tehát egy reaktív menedzsment a rendszerben már bekövetkezett változásokra reagál.
+
+Egy menedzsment rendszer \textit{proaktív}, ha a reaktív része az előrelátás, illesztés és tanulás folyamataival van kiegészítve, amely folyamatok célja a rendszer támogatása, és annak koherenciájáról és hatékonyságáról való gondoskodás. Egy proaktív rendszer folyamatos monitorozással, előrelátással és tanulással próbál reagálni a rendszerben még be nem következett eseményekre.
+
+\section{Proaktív erőforráskezelés általános rendszerek esetén}
+
+\subsection{A proaktív menedzsment lehetőségei klasszikus IT infrastruktúrákban}
+
+\subsection{Proaktivitás a felhőalapú rendszereknél}
+
+\section{Proaktív erőforráskezelés oktatás támogató rendszerek esetén}
+
+\subsection{LMS rendszerek proaktív erőforrás-kezelésének automatizálása felhők esetében}
+
+A piacon található nagyobb felhőszolgáltatást nyújtó cégek publikálnak a rendszerükhöz egy API-t (alkalmazás programozási felületet, \angolul{Application Programming Interface}), amely lehetőséget biztosít arra, hogy különféle műveleteket végezzünk el virtuális szerverünkön anélkül, hogy a szolgáltató által nyújtott adminisztrációs felületre belépnénk.
+
+Ilyen műveletek lehetnek az alapvetőnek számító szerver leállítás, elindítás, szerverek kilistázása, vagy a már plusznak számító erőforrások igénylése, módosítása, új terheléselosztó konfigurálása és beüzemelése. A már korábban említett Amazon EC2 szolgáltatás egy viszonylag egyszerű, kényelmes, és funkciókban bővelkedő API-val rendelkezik.
+
+Ebből kifolyólag lehetséges lenne, hogy pl. egy Amazonnál üzemeltetett oktatás támogató rendszer bizonyos eseményekhez előre beállított szabályok alapján újabb erőforrásokat rendeljen hozzá. Például amennyiben az üzemeltetés tudja, hogy egy jövőbeli teszt miatt nagy számú konkurens felhasználóra lehet számítani, akkor az LMS-ben megadott teszt kezdetéhez ütemezve a rendszer automatikusan meghívja azokat az utasításokat, amelynek következtében újabb erőforrásokat kapunk, majd a teszt kitöltésének végén visszaadja azokat az erőforrásokat a szolgáltatónak.
+
+Ennek a módszernek több előnye is van. Egyrészt proaktívan tudjuk kezelni a rendszer terhelésváltozását, megelőzve ezzel a váratlan kieséseket. Másrészt mivel a szolgáltatók nagy része olcsóbban adja az előre bejegyzett erőforrásokat, mint az igénymegjelenés (on-demand \todo{Itt tartok})  ráadásul költséghatékonyabbak is vagyunk, mintha reaktív módon, igénymegjelenés jelleggel 
+
+\todo{Árakat kimatekozni!}
+
+pl. Moodle teszt esetére automatikan meghívjuk a cloud API-ját, hogy növeljük a szükséges erőforrásokat
+
+\subsection{A felhők előnyei LMS-ek üzemeltetése esetén}
+
+Előre foglalt erőforrások
+        
+Igény esetén változó erőforrások
+
