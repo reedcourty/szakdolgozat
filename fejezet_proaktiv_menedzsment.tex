@@ -22,15 +22,14 @@ Ilyen műveletek lehetnek az alapvetőnek számító szerver leállítás, elind
 
 Ebből kifolyólag lehetséges lenne, hogy pl. egy Amazonnál üzemeltetett oktatás támogató rendszer bizonyos eseményekhez előre beállított szabályok alapján újabb erőforrásokat rendeljen hozzá. Például amennyiben az üzemeltetés tudja, hogy egy jövőbeli teszt miatt nagy számú konkurens felhasználóra lehet számítani, akkor az LMS-ben megadott teszt kezdetéhez ütemezve a rendszer automatikusan meghívja azokat az utasításokat, amelynek következtében újabb erőforrásokat kapunk, majd a teszt kitöltésének végén visszaadja azokat az erőforrásokat a szolgáltatónak.
 
-Ennek a módszernek több előnye is van. Egyrészt proaktívan tudjuk kezelni a rendszer terhelésváltozását, megelőzve ezzel a váratlan kieséseket. Másrészt mivel a szolgáltatók nagy része olcsóbban adja az előre bejegyzett erőforrásokat, mint az igénymegjelenés (on-demand \todo{Itt tartok})  ráadásul költséghatékonyabbak is vagyunk, mintha reaktív módon, igénymegjelenés jelleggel 
+Ennek a módszernek több előnye is van. Egyrészt proaktívan tudjuk kezelni a rendszer terhelésváltozását, megelőzve ezzel a váratlan kieséseket. Másrészt mivel a szolgáltatók nagy része olcsóbban adja az előre igényelt erőforrásokat, mint az igénymegjelenés (\angolul{on-demand}) szerintieket, ezért költségek szempontjából is jobban járunk ezzel a módszerrel.
 
-\todo{Árakat kimatekozni!}
+Az Amazon néhány platformra kész API megvalósításokat nyújt. Ilyen platformok például a PHP, Python, Java, Ruby és .NET, amely platformokat oktatás támogató rendszerek fejlesztésénél is szívesen alkalmazzák, így ezzel is könnyebbséget jelentve a fentebb említett funkciók lefejlesztéséhez.
 
-pl. Moodle teszt esetére automatikan meghívjuk a cloud API-ját, hogy növeljük a szükséges erőforrásokat
+Az egyedül nehézséget a már korábbi Modellek részben említett problémák adják, vagyis hogy nem egyszerű meghatározni azt, hogy pontosan mennyi erőforrást igényeljünk például egy teszt kitöltésének idejére a szolgáltatótól. 
 
-\subsection{A felhők előnyei LMS-ek üzemeltetése esetén}
+\subsection{A felhők előnyei és hátrányai LMS-ek üzemeltetése esetén}
 
-Előre foglalt erőforrások
-        
-Igény esetén változó erőforrások
+Mint ahogy azt már vázoltam egy oktatás támogató rendszert mind hagyományos, mind felhőalapú infrastruktúrán lehet üzemeltetni. Ebben a részben szeretném kicsit összefoglalni, hogy felhő esetében milyen előnyökkel és hátrányokkal jár ez.
 
+Láthattuk, hogy egy LMS erőforrásigénye nagyban függ a felhasználói viselkedéstől, azt is megmutattam, hogy napjainkban nincsenek még 100\%-os modellek, módszerek ezek előrejelzésére. Amíg a klasszikus IT infrastruktúránál az üzemeltetés csak próbálja mindig meghatározni a maximális erőforrásigényt, és ennek megfelelően kialakítani, fejleszteni a rendszert, addig a felhők proaktívitásának köszönhetően ezek a plusz erőforrásigények automatikusan kielégítésre kerülnek, igaz, hogy költség szempontjából kicsit drágábbak. Viszont ezeknek a költségeknek is több összetevője van, hiszen a felhő alapú üzemeltetés esetén nem kell foglalkoznunk eszközbeszerzéssel, karbantartással, hibás hardverek pótlásával, amely a nem várt költségek nagy részét tehetik ki. Felhők esetén előre ki tudjuk számolni a költségeinket, a rendszer megfelelő méretezésével pedig a drágább \angolul {on-demand} erőforrások költségeit is minimalizálhatjuk.   
