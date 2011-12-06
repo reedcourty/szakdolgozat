@@ -1,9 +1,9 @@
 \chapter{Tanulásmenedzsment rendszerek}
-Tanulásmenedzsment rendszernek, angolul Learning Management Systemnek (LMS-nek) nevezzük azokat a szoftver alkalmazásokat, amelyek automatizálják az oktatás adminisztrációját, követését, az online kurzusok és az azokkal kapcsolatos események, anyagok kezelését.
+\section{A tanulásmenedzsment rendszerek fogalma}
+Tanulásmenedzsment rendszernek, angolul Learning Management Systemnek (LMS-nek), vagy oktatás támogató rendszereknek nevezzük azokat a szoftver alkalmazásokat, amelyek automatizálják az oktatás adminisztrációját, követését, az online kurzusok és az azokkal kapcsolatos események, anyagok kezelését.
 
 Egy robusztus LMS-nek képesnek kell lennie \cite{ellis2009}:
 \begin{sajat_itemize}
-\setlength{\itemsep}{0pt}
 \item központosított és automatizált adminisztrációra,
 \item önkiszolgáló és önálló irányítású szolgáltatások nyújtására,
 \item oktatási anyagok gyors összeállítására és elérhetőségének biztosítására,
@@ -16,6 +16,8 @@ Tehát egy tanulásmenedzsment rendszer nem más, mint olyan szolgáltatások ö
 
 Fontos megjegyezni, hogy nem csak a közoktatásban, hanem a vállalati, ipari továbbképzésekben is szívesen alkalmazzák ezeket a rendszerek, mivel sok közülük rendelkezik a megfelelő humánerőforrás kezeléssel kapcsolatos funkciókkal is. A Hewlett-Packard-nál például felhőalapú oktatási rendszert használnak.
 
+\section{A piacon elérhető oktatás támogató rendszerek}
+
 A piacon több nyílt forrású, ingyenesen elérhető és zárt, kereskedelmi változatokat, vagy vegyes koncepciókat is találunk, amelyek esetében ugyan a rendszer maga nyílt forrású, de a támogatásért, vagy akár bérüzemeltetésért már pénzbeli juttatást kérnek. \Aref{tab:openlms}.~táblázatban néhány ismertebb nyílt forrású LMS-t soroltam fel \cite{lms}. Érdemes megnézni, hogy általában PHP, MySQL technológiák segítségével valósítják meg ezeket a rendszereket.
 
 \input{tablazat_lms}
@@ -26,4 +28,23 @@ A HTML5 technológia terjedésének valószínűsíthető következménye lesz, 
 
 Egyre több olyan céget találunk az Interneten, amelyek valamilyen oktatás támogató rendszer megoldást nyújtanak. Ezek egy része megvásárolható szoftveralkalmazás, amelyet a felhasználónak kell telepítenie, és üzemeltetnie, de egyre jobban elterjednek a felhő alapú megoldások, amelyek esetében a cég csak az alkalmazás használatát adja bérbe, az üzemeltetésével ő foglalkozik, levéve ezzel a felhasználó válláról a terhet.
 
-\todo{szekciókra kellene bontani!}  
+\section{Átjárhatóság az egyes LMS-ek között}
+
+Jogosan merül fel a kérdés, hogyha ilyen sok LMS érhető el a piacon melyik a számunkra megfelelő választás, és mi van abban az esetben, ha később rájövünk arra, hogy teljesen más igényeket kell kielégítenie, ezért szeretnénk egy másik alkalmazást használni. Vagy csak egyszerűen szeretnék a már meglévő tudástárunkat egyszerűen átmigrálni egy másik oktatás támogató rendszerbe. Ez a probléma már korábban is megjelent, megoldására találták ki a SCORM-ot.
+
+\section{SCORM}
+A SCORM (Sharable Content Object Reference Model) web-alapú e-learning rendszerekkel  kapcsolatos szabványok és specifikációk gyűjteménye. A SCORM definiálja a kommunikációt a kliens oldal és a futtatási környezet (run-time environment) között.
+
+Felhasználói oldalról nézve a tanárok oktatási csomagokat tölthetnek fel/le a kurzusok között akár különböző LMS megvalósítások esetén is, ha azok támogatják az adott SCORM verziót (portabilitás).
+
+A SCORM megalkotása az ADL (Advanced Distributed Learning) Initiative nevű amerikai kormányzati szervezethez kötődik. Az ADL-t 1997-ben alapították a Védelmi minisztérium felügyelete alatt, feladata oktatás technológiai alkalmazások fejlesztése és implementálása. Később több országban nyitottak kutató laboratóriumot partnereiknél.
+
+Az interoperabilitás infrastruktúrája a SCORM-on és az ADL-R-en (ADL Registry-n) alapul. A SCORM felelős az LMS-ek közötti kurzusok és az azokhoz kapcsolódó adatok cseréjéért, a kurzusok közötti tartalom újrafelhasználásért, és a tanulóra szabott tartalom sorrendjéért. Az ADL-R a különböző tartalom könyvtárak és média tárolókban való keresést segíti elő.
+
+A SCORM előnyei \cite{sco}:
+\begin{sajat_itemize}
+\item objektum alapú megközelítést biztosít az oktatási anyag fejlesztéshez és szállításához
+\item interoperabilitást biztosít ezekhez az objektumokhoz többfajta szállítási környezeten keresztül
+\item a tanuló saját ritmusú haladásán alapú szofisztikált tanulási stratégiákat enged
+\item lehetővé teszi tananyagok és oktatási stratégiák importálását, exportálását.
+\end{sajat_itemize}
