@@ -2,7 +2,7 @@
 
 \section{A proaktív menedzsment fogalma}
 
-A rendszer menedzsmentet két típusba sorolhatjuk.  Egy menedzsment rendszert \textit{reaktívnak} mondunk, ha képes gyorsan és hatékonyan reagálni a külső és belső kérelmekre a belső flexibilitás maximalizálásával. Ezt a reaktivitást a rendszer rugalmasságán alapulva decentralizált döntésekkel és a fejlesztés reflexszerű viselkedésével előre definiált szabályok segítségével érik el.\cite{aftsarapms} Tehát egy reaktív menedzsment a rendszerben már bekövetkezett változásokra reagál. A reaktív rendszer vázlata látható \aref{fig:reactive_system}.~ ábrán.
+A rendszer menedzsmentet két típusba sorolhatjuk.  Egy menedzsment rendszert \textit{reaktívnak} mondunk, ha képes gyorsan és hatékonyan reagálni a külső és belső kérelmekre a belső flexibilitás maximalizálásával. Ezt a reaktivitást a rendszer rugalmasságán alapulva decentralizált döntésekkel és a fejlesztés reflexszerű viselkedésével előre definiált szabályok segítségével érik el.\cite{aftsarapms} Tehát egy reaktív menedzsment a rendszerben már bekövetkezett változásokra reagál. A reaktív rendszer vázlata látható \aref{fig:reactive_system}.~ ábrán. A reaktív vezérlés inkább egy cselekvés valamilyen szituációra válaszolva, mint annak a szituációnak a létrehozása, vagy vezérlése.\cite{patariczapro}
 
 \begin{figure}[h!]
 \centering
@@ -10,7 +10,7 @@ A rendszer menedzsmentet két típusba sorolhatjuk.  Egy menedzsment rendszert \
 \caption{A reaktív rendszer áttekintő ábrája (Forrás: \cite{patariczapro}) \label{fig:reactive_system}}
 \end{figure}
 
-Egy menedzsment rendszer \textit{proaktív}, ha a reaktív része az előrelátás, illesztés és tanulás folyamataival van kiegészítve, amely folyamatok célja a rendszer támogatása, és annak koherenciájáról és hatékonyságáról való gondoskodás. Egy proaktív rendszer folyamatos monitorozással, előrelátással és tanulással próbál reagálni a rendszerben még be nem következett eseményekre. Egy proaktív rendszer áttekintő vázlatát mutatja be \aref{fig:proactive_system}.~ábra.
+Egy menedzsment rendszer \textit{proaktív}, ha a reaktív része az előrelátás, illesztés és tanulás folyamataival van kiegészítve, amely folyamatok célja a rendszer támogatása, és annak koherenciájáról és hatékonyságáról való gondoskodás. Egy proaktív rendszer folyamatos monitorozással, előrelátással és tanulással próbál reagálni a rendszerben még be nem következett eseményekre. Egy proaktív rendszer áttekintő vázlatát mutatja be \aref{fig:proactive_system}.~ábra. A poraktív vezérlés inkább egy szituáció irányítása, mint a szituáció által okozott történésekre adott válasz. \cite{patariczapro}
 
 \begin{figure}[h!]
 \centering
@@ -18,17 +18,23 @@ Egy menedzsment rendszer \textit{proaktív}, ha a reaktív része az előrelát�
 \caption{A proaktív rendszer áttekintő ábrája (Forrás: \cite{patariczapro}) \label{fig:proactive_system}}
 \end{figure}
 
-\section{Proaktív erőforráskezelés általános rendszerek esetén}
+\section{Proaktív erőforrás-kezelés általános rendszerek esetén}
 
-\subsection{A proaktív menedzsment lehetőségei klasszikus IT infrastruktúrákban}
+\todo{Alakítgatni!}
 
-\todo{Ide jól jönne valami ötlet!}
+A proaktív IT rendszerek a reaktívakkal ellentétben előretekintőek, vagyis megpróbálják kitalálni, hogy mi fog történni a rendszerrel a jövőben.
 
-\subsection{Proaktivitás a felhőalapú rendszereknél}
+A proaktív üzemeltetés konstans költséggel jár, ezért ott érdemes alkalmazni, ahol a kiesés nagy anyagi kárt okozna.
 
-\todo{Ide jól jönne valami ötlet!}
+A reaktív rendszerek reagáló rendszerek, ebből kifolyólag a rendszerben történő problémák nagy költségugrással járnak. 
 
-\section{Proaktív erőforráskezelés oktatás támogató rendszerek esetén}
+Egy reaktív rendszer a már bekövetkezett súlyos hibára reagál, míg a proaktív a rendszerben még csak megjelent hibaokra. Ezáltal a hibaok és a végzetes hiba megjelenése között eltelt lappangási időt nyerjünk egy proaktív rendszernél, amely idő alatt pl. át lehet kapcsolni a tartalék erőforrásokra.
+
+Egy proaktív rendszerben állandó megfigyeléseket végzünk, amely megfigyelések során minden releváns esetet figyelembe veszünk. A megfigyelt adatokat analizáljuk, a bemeneti adatokat ellenőrizzük, hogy ténylegesen valós értékeket reprezentálnak-e. Vizuális analízist (pl. párhuzamos koordináták módszere a koherencia megvizsgálására), és automata számítási módszereket alkalmazunk arra, hogy megértsük pontosan mit is jelentenek az adatok. A tudás elemzés során klaszter technikákat, általánosítást használunk, és megpróbálunk előre látni. A szituációt meghatározó fő tényezők tájékoztató jellegűek az akcióterv meghatározásához.
+
+A VMware VMotion technikája a proaktív menedzsment jó példája. Ez a technológiai alkalmazás lehetővé teszi, hogy működés alatt álló virtuális gépeket egyik hardverről egy másikra kerüljenek át a kiesés minimalizálásával. 
+
+\section{Proaktív erőforrás-kezelés oktatás támogató rendszerek esetén}
 
 \subsection{LMS rendszerek proaktív erőforrás-kezelésének automatizálása felhők esetében}
 
