@@ -1,0 +1,116 @@
+\begin{table}[h]
+	\caption{Az Amazon EC2 API boto.ec2.connection osztályának néhány metódusa (associate\_address - disassociate\_address)}
+	\centering
+	\small
+	\begin{tabular}{| p{7.5cm} | p{6.5cm} |}
+		\hline
+		\rowcolor{MyTableColor} \textbf{Metódus/függvény} & \textbf{Leírás} \\
+		\hline
+		\texttt{\textbf{associate\_address}(instance\_id, public\_ip=None, allocation\_id=None)} & Egy IP címet (Elastic IP-t) rendel az éppen futó szerver példányunkhoz. \\
+		\hline
+		\texttt{\textbf{attach\_volume}(volume\_id, instance\_id, device)} & A \texttt{volume\_id} EBS (Elastic Block Store) kötetet az \texttt{instance\_id} szerverpéldányhoz csatolja. \\
+		\hline
+		\texttt{\textbf{create\_image}(instance\_id, name, description=None, no\_reboot=False)} & Egy AMI-t (Amazon Machine Image) készít az \texttt{instance\_id} szerverpéldány aktuális futó vagy leállított állapotából. \\
+		\hline
+    	\texttt{\textbf{create\_key\_pair}(key\_name)} & Egy új kulcspárt készít, amely kulcs az azonosításhoz szükséges. \\
+		\hline
+		\texttt{\textbf{create\_snapshot}(volume\_id, description=None)} & Egy létező EBS kötetről készít pillanatképet. \\
+		\hline
+		\texttt{\textbf{create\_tags}(resource\_ids, tags)} & Új metaadat címkéket készít a \texttt{resource\_ids} azonosítójú erőforrásokhoz. \\
+		\hline
+        \texttt{\textbf{create\_volume}(size, zone, snapshot=None)} & Egy új \texttt{size} méretű EBS kötetet készít. \\
+        \hline
+        \texttt{\textbf{delete\_key\_pair}(key\_name)} & Törli a \texttt{key\_name} nevű azonosító kulcspárt. \\
+        \hline
+        \texttt{\textbf{delete\_snapshot}(snapshot\_id)} & Törli a \texttt{snapshot\_id} azonosítójú pillanatképet. \\
+        \hline        
+        \texttt{\textbf{delete\_tags}(resource\_ids, tags)} & Tölri a metaadat címkéket a \texttt{resource\_ids} azonosító erőforrásokról. \\
+        \hline
+        \texttt{\textbf{delete\_volume}(volume\_id)} & Töröli a \texttt{volume\_id} azonosítójú EBS kötetet. \\
+        \hline
+        \texttt{\textbf{detach\_volume}(volume\_id, instance\_id=None, device=None, force=False)} & Lecsatol egy EBS kötetet egy EC2 példányról. \\
+        \hline
+        \texttt{\textbf{disassociate\_address}(public\_ip=None, association\_id=None)} & Elveszi az Elastic IP címet az aktuálisan futó példánytól. \\        
+        \hline
+    \end{tabular}
+	\normalsize
+	\label{tab:aws_boto_ec2_01}
+\end{table}        
+        
+\begin{table}[h]
+	\caption{Az Amazon EC2 API boto.ec2.connection osztályának néhány metódusa (get\_all\_images - reset\_snapshot\_attribute)}
+	\centering
+	\small
+	\begin{tabular}{| p{8.0cm} | p{6.0cm} |}
+	\hline
+		\rowcolor{MyTableColor} \textbf{Metódus/függvény} & \textbf{Leírás} \\
+	    \hline          
+        \texttt{\textbf{get\_all\_images}(image\_ids=None, owners=None, executable\_by=None, filters=None)} & Lekéri az összes EC2 szerver image-t, amelyek a fiókhoz kapcsolódnak. \\
+        \hline   
+        \texttt{\textbf{get\_all\_instances}(instance\_ids=None, filters=None)} & Lekéri az összes szerver példányt, amelyek a fiókhoz tartoznak. \\
+        \hline
+        \texttt{\textbf{get\_all\_key\_pairs}(keynames=None, filters=None)} & Visszaadja a fiókhoz tartozó összes kulcspárt. \\
+        \hline
+        \texttt{\textbf{get\_all\_ramdisks}(ramdisk\_ids=None, owners=None)} & Lekéri az összes EC2 ramdisket,a melyek elérhetőek a fiókból. \\
+        \hline
+        \texttt{\textbf{get\_all\_regions}(region\_names=None, filters=None)} & Lekéri az összes elérhető régióját az EC2 szolgáltatásnak. \\
+        \hline
+        \texttt{\textbf{get\_all\_volumes}(volume\_ids=None, filters=None)} & Lekéri az összes kötetet. \\
+        \hline
+        \texttt{\textbf{get\_console\_output}(instance\_id)} & Letölti az adott szerver példány konzol kimenetét. \\
+        \hline
+        \texttt{\textbf{get\_image\_attribute}(image\_id, attribute='launchPermission')} & Lekéri egy szerver képállomány attribútumait. \\
+        \hline
+        \texttt{\textbf{get\_instance\_attribute}(instance\_id, attribute)} & Lekéri egy példány attribútumait. \\
+        \hline
+        \texttt{\textbf{get\_password\_data}(instance\_id)} & Egy Windows-os szerverpéldány titkosított jelszavát kéri le. \\
+        \hline
+        \texttt{\textbf{get\_snapshot\_attribute}(snapshot\_id, attribute='createVolumePermission')} & Lekéri egy pillanatkép attribútumának információját. \\
+        \hline
+        \texttt{\textbf{import\_key\_pair}(key\_name, public\_key\_material)} & Egy külső program által generált RSA kulcspár publikus kulcsát importálja be. \\
+        \hline
+        \texttt{\textbf{modify\_image\_attribute}(image\_id, attribute='launchPermission', operation='add', user\_ids=None, groups=None, product\_codes=None)} & Egy szerver képállomány attribútumait változtatja meg. \\
+        \hline
+        \texttt{\textbf{modify\_instance\_attribute}(instance\_id, attribute, value)} & Egy szerverpéldány attribútumait változtatja meg. \\
+        \hline
+        \texttt{\textbf{modify\_snapshot\_attribute}(snapshot\_id, attribute='createVolumePermission', operation='add', user\_ids=None, groups=None)} & Egy pillanatkép attribútumát változtatja meg. \\
+        \hline
+        \texttt{\textbf{monitor\_instances}(instance\_ids)} & Engedélyezi a CloudWatch monitorozót a megadott szerver példányokon. \\
+        \hline
+        \texttt{\textbf{reboot\_instances}(instance\_ids=None)} & Újraindítja a megadott példányokat. \\
+        \hline
+        \texttt{\textbf{release\_address}(public\_ip=None, allocation\_id=None)} & Felszabadít egy Elastic IP-címet. \\
+        \hline
+        \texttt{\textbf{reset\_image\_attribute}(image\_id, attribute='launchPermission')} & Visszaállítja egy AMI attribútumának alapértelmezett értékét. \\
+        \hline
+        \texttt{\textbf{reset\_instance\_attribute}(instance\_id, attribute)} & Visszaállítja egy példány attribútumának alapértelmezett értékét. \\
+        \hline
+        \texttt{\textbf{reset\_snapshot\_attribute}(snapshot\_id, attribute='createVolumePermission')} & Visszaállítja egy pillanatkép attribútumának alapértelmezett értékét. \\
+        \hline
+    \end{tabular}
+	\normalsize
+	\label{tab:aws_boto_ec2_02}
+\end{table}        
+        
+\begin{table}[h]
+	\caption{Az Amazon EC2 API boto.ec2.connection osztályának néhány metódusa (run\_instances - unmonitor\_instances)}
+	\centering
+	\small
+	\begin{tabular}{| p{9.0cm} | p{5.0cm} |}
+	    \hline
+        \rowcolor{MyTableColor} \textbf{Metódus/függvény} & \textbf{Leírás} \\
+	    \hline 
+        \texttt{\textbf{run\_instances}(image\_id, min\_count=1, max\_count=1, key\_name=None, security\_groups=None, user\_data=None, addressing\_type=None, instance\_type='m1.small', placement=None, kernel\_id=None, ramdisk\_id=None, monitoring\_enabled=False, subnet\_id=None, block\_device\_map=None, disable\_api\_termination=False, instance\_initiated\_shutdown\_behavior=None, private\_ip\_address=None, placement\_group=None, client\_token=None, security\_group\_ids=None)} & Egy szerver képállományt (image-t) futtat az EC2-n. \\
+        \hline
+        \texttt{\textbf{start\_instances}(instance\_ids=None)} & Elindítja az adott példányt. \\
+        \hline
+        \texttt{\textbf{stop\_instances}(instance\_ids=None, force=False)} & Leállítja az adott példányt. \\
+        \hline
+        \texttt{\textbf{terminate\_instances}(instance\_ids=None)} & Megszünteti az adott példány futását. \\
+        \hline
+        \texttt{\textbf{unmonitor\_instances}(instance\_ids)} & Kikapcsolja a CloudWatch monitorozót az adott példányokon. \\
+        \hline
+	\end{tabular}
+	\normalsize
+	\label{tab:aws_boto_ec2_03}
+\end{table}
