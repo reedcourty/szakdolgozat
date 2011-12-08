@@ -59,23 +59,23 @@ Egy LMS életében a következő erőforrás igényes időszakokat különbözte
 
 A következőekben megpróbálom összefoglalni, hogy ezek közül melyik milyen módon terheli meg a rendszerünk erőforrásai.
 
-\subsubsection{Kurzus-/vizsgajelentkezési időszak}
+\subsubsection{Kurzus-/vizsgajelentkezési időszak\protect\footnote{Ezt az alfejezetet a BME KTH Neptun Üzemeltetés által kiadott tájékoztatók alapján írtam, amelyeket a rendszer bejelentkező oldalán, a "Letölthető dokumentumok" résznél találhatóak.}}
 
 Sajnos a BME hallgatóinak nem ismeretlen a Neptun Egységes Tanulmányi Rendszer vizsga- és tárgyjelentkezési időszakokban történő kiesése. Ezekben az időszakokban rohamosan megnő az egyszerre aktív felhasználók száma, amivel a rendszer nem tud megbirkózni. Az üzemeltetés mindent megtesz annak érdekében, hogy a rendszer működőképes legyen a több ezer felhasználó esetén is, de ha valamelyik rétegben egy-egy erőforrás nem tudja feldolgozni a kéréseket, akkor az az egész rendszerre kihatással van.
 
-A rendszer terhelés elosztását egy virtualizált gépre telepített szoftver végzi.\cite{neptun2} A 2011. év januári tárgyfelvételi időszakában ez az ingyenes, de több helyen sikerrel alkalmazott szoftver 4000-5000 konkurens felhasználót még ki tudott szolgálni, de az efölötti kérésekkel tömegével már nem volt képes megbirkózni.
+A rendszer terhelés elosztását egy virtualizált gépre telepített szoftver végzi. A 2011. év januári tárgyfelvételi időszakában ez az ingyenes, de több helyen sikerrel alkalmazott szoftver 4000-5000 konkurens felhasználót még ki tudott szolgálni, de az efölötti kérésekkel tömegével már nem volt képes megbirkózni.
 
 A rendszer úgy van kialakítva, hogy a terheléselosztó építi ki a kapcsolatot a webszerverekkel, viszont amikor az összeomlik a már felépített kapcsolatok is elvesznek. A felhasználók ebből annyit tapasztaltak, hogy a rendszer csak hosszú idő után engedte őket belépni a rendszerbe, majd ezután gyakran ki is dobta őket.
 
 A felhasználók a negatív tapasztalatokra még agresszívebben próbálták elérni a rendszert (folyamatos oldallekérések, frissítések), amely viselkedés csak növelte a kiszolgálatlan kérések számát. Mindeközben a webszerverek, és az adatbázis szerverek kihasználtsága a nullához közelített, hiszen a terheléselosztó nem   volt képes a kéréseket továbbítani feléjük.
 
-A Neptun rendszer a júniusi tárgyfelvételi időszakot is zökkenővel viselte.\cite{neptun3} A június 7-én 18 órakor kezdődő felhasználói rohamot, ami 6000 egyidejű, aktív felhasználót jelentett ezúttal a terheléselosztó jól viselte, ám pontosan emiatt az adatbázisszerver nem tudod megküzdeni a nagy számú kéréssel, és megtelt a memóriája.
+A Neptun rendszer a júniusi tárgyfelvételi időszakot is zökkenővel viselte. A június 7-én 18 órakor kezdődő felhasználói rohamot, ami 6000 egyidejű, aktív felhasználót jelentett ezúttal a terheléselosztó jól viselte, ám pontosan emiatt az adatbázisszerver nem tudod megküzdeni a nagy számú kéréssel, és megtelt a memóriája.
 
-Ennek következtében az üzemeltetésnek le kellett állítani az egész rendszert, újra konfigurálni az adatbázis szervert (szerencsére mivel virtualizált, felhő alapú rendszerről beszélünk\cite{neptun1} ezért viszonylag egyszerűen megnövelni a memóriáját), majd újraindítani azt, és a webszervereket. Ezután a rendszer már megfelelően működött, alig 10 perc leforgása alatt 6000 felhasználó tudott belépni, és 22500 tárgyat felvenni.
+Ennek következtében az üzemeltetésnek le kellett állítani az egész rendszert, újra konfigurálni az adatbázis szervert (szerencsére mivel virtualizált, felhő alapú rendszerről beszélünk ezért viszonylag egyszerűen megnövelni a memóriáját), majd újraindítani azt, és a webszervereket. Ezután a rendszer már megfelelően működött, alig 10 perc leforgása alatt 6000 felhasználó tudott belépni, és 22500 tárgyat felvenni.
 
-A 2011. augusztus végi tárgyfelvételi időszak jól jellemzi, hogy mennyire függ egy ilyen rendszer a felhasználói viselkedéstől. \cite{neptun4} Mivel a hallgatóknak már lehetőségük volt a nyár elején felvenni a következő féléves tárgyaikat, ezért a véglegesítési időszakban elmaradt a szokásos terhelés.
+A 2011. augusztus végi tárgyfelvételi időszak jól jellemzi, hogy mennyire függ egy ilyen rendszer a felhasználói viselkedéstől.  Mivel a hallgatóknak már lehetőségük volt a nyár elején felvenni a következő féléves tárgyaikat, ezért a véglegesítési időszakban elmaradt a szokásos terhelés.
 
-A 2011. november 28-án 18 órakor kezdődő vizsgajelentkezés során megint problémák voltak a rendszerrel.\cite{neptun5} Ezúttal a terheléselosztó és a webszerverek tökéletesen működtek, azonban az adatbázis szerver két rendszerparaméter miatt újraösszeomlott. A szerver újrakonfigurálásával, és a rendszer teljes újraindításával a problémát elhárították, és a felhasználók újra megrohanhatták a Neptunt.
+A 2011. november 28-án 18 órakor kezdődő vizsgajelentkezés során megint problémák voltak a rendszerrel. Ezúttal a terheléselosztó és a webszerverek tökéletesen működtek, azonban az adatbázis szerver két rendszerparaméter miatt újraösszeomlott. A szerver újrakonfigurálásával, és a rendszer teljes újraindításával a problémát elhárították, és a felhasználók újra megrohanhatták a Neptunt.
 
 A történtek tanulsága, hogy egy ilyen összetett infrastruktúra esetében elég az egyik rétegben bekövetkező hiba, és az az egész rendszerre hatással lehet. Az üzemeltetés automatizált terheléstesztekkel próbálta megkeresni a rendszer szűk keresztmetszetét, és új konfigurációs beállításokkal megszüntetni azokat, de a felhasználói viselkedést nem tudták egyik esetben sem előre meghatározni.
 
