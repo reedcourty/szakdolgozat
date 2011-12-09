@@ -31,7 +31,11 @@ Az egyik legelterjedtebb webes alkalmazás platform a PHP, mivel ez a nyelv szin
 
 \subsection{Webszerverek erőforrásigénye}
 
-\todo{Webszerverek eltérő igénye}
+Ahhoz, hogy el tudjunk indulni a webszerverek erőforrásigényeinek vizsgálatában először meg kell értenünk, hogyan is működnek ezek az alkalmazások. Egy webszerver általában egy többfolyamatos (\angolul{multi-process}) vagy többszálas (\angolul{multi-threaded}) modell szerint működik.\cite{Lu:2001:FCA:882481.883781} Ezek a feldolgozó folyamatok, vagy szálak igény esetén jönnek létre, vagy egy tárolóban előre létrehozott számban várják a beérkező TCP kapcsolatokat, hogy kiszolgálhassák azokat. A széleskörűen használt Apache webszerver a többfolyamatos, készletes modellt alkalmazza.
+
+A HTTP 1.0 esetében minden egyes kérés egy TCP kapcsolatot jelentett, amely így nagyszámú konkurens kapcsolatot igényelt. Ezen javítva a HTTP 1.1-es verziójában megjelent a perzisztens kapcsolat, amely lehetővé teszi, hogy egy kapcsolatba több kérés is belekerüljön.
+
+Ezek a perzisztens kapcsolatok egy új típusú szűk keresztmetszetet hoztak be a szerverekbe. Amióta a kiszolgáló folyamat egy perzisztens kapcsolathoz köthető a CPU kihasználtsága nagyon alacsony. Ezen alacsony kihasználtságon a végrehajtó folyamatok számának növelésével segíthetünk, ám ekkor a virtuális memória kezdhet el vergődni (\angolul{thrashing}). Ezt csak viszonylag sok elérhető memóriával orvosolhatjuk. Ebből következik, hogy a webszerverek inkább memória-, mint processzorigényesek. 
 
 \subsection{Adatbázisszerverek erőforrásigénye}
 
