@@ -39,7 +39,11 @@ Ezek a perzisztens kapcsolatok egy új típusú szűk keresztmetszetet hoztak be
 
 \subsection{Adatbázisszerverek erőforrásigénye}
 
-\todo{adatbázisok igénye MySQL vs. PostgreSQL vs. Oracle vs. MSSQL}
+Az adatbázisok erőforrás igénye igen összetett, hiszen egyik részről a lekérdezéseket, tranzakciókat optimalizálni kell (CPU terhelés), az adatokat a háttértárról be kell olvasni, vagy oda ki kell írni (I/O terhelés), és az ezeket az igények csökkentő technikák memória igénye növekedhet.
+
+Az adatbázis szerverek nagy része támogatja az ún. \angolul{connection pooling} megoldást, amely a webszerverek perzisztens kapcsolat-kezeléséhez hasonló, és ezzel együtt ebben az esetben is az erőforrásigény a memória felé tolódik el.Tehát összességében az adatbázis szerverek is inkább memória és lemez I/O igényesek.
+
+Néhány adatbázisnál előnyként jelenik meg, hogy a \angolul{connection pooling}-gal úgy tudjuk a teljesítményt növelni, hogy ahhoz nem kell az alkalmazás réteghez hozzányúlni. A PostgreSQL adatbázis-kezelőhöz fejlesztett pgpool (\href{http://www.pgpool.net}{http://www.pgpool.net}) például egy ilyen megoldás, amellyel akár kétszeres kiszolgálási értékeket érhetünk el.
 
 \section{Egy példarendszer: a Moodle}
 A Moodle hardveres erőforrásigényei a következők:
