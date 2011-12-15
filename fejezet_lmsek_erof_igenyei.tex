@@ -39,7 +39,7 @@ Ezek a perzisztens kapcsolatok egy új típusú szűk keresztmetszetet hoztak be
 
 \subsection{Adatbázisszerverek erőforrásigénye}
 
-Az adatbázisok erőforrás igénye igen összetett, hiszen egyik részről a lekérdezéseket, tranzakciókat optimalizálni kell (CPU terhelés), az adatokat a háttértárról be kell olvasni, vagy oda ki kell írni (I/O terhelés), és az ezeket az igények csökkentő technikák memória igénye növekedhet.
+Az adatbázisok erőforrásigénye igen összetett, hiszen egyik részről a lekérdezéseket, tranzakciókat optimalizálni kell (CPU terhelés), az adatokat a háttértárról be kell olvasni, vagy oda ki kell írni (I/O terhelés), és az ezeket az igények csökkentő technikák memória igénye növekedhet.
 
 Az adatbázis szerverek nagy része támogatja az ún. \angolul{connection pooling} megoldást, amely a webszerverek perzisztens kapcsolat-kezeléséhez hasonló, és ezzel együtt ebben az esetben is az erőforrásigény a memória felé tolódik el.Tehát összességében az adatbázis szerverek is inkább memória és lemez I/O igényesek.
 
@@ -62,7 +62,7 @@ A processzor oldaláról nincs különösebb megkötés, a manapság már által
 
 Az LMS-ek esetében a terhelés változások okozói elsősorban maguk a felhasználók, hiszen ők azok, akik időszakosan megnövekedett kérésszámot intézhetnek a rendszerünk felé. Érdemes lehet ezeket az időszakokat és a hozzájuk kapcsolódó viselkedési változásokat összegyűjteni.
 
-Egy LMS életében a következő erőforrás igényes időszakokat különböztethetjük meg:
+Egy LMS életében a következő erőforrásigényes időszakokat különböztethetjük meg:
 \begin{sajat_itemize}
 \item kurzus-/vizsgajelentkezési időszak,
 \item kurzussal kapcsolatos feladatok beadási határideje,
@@ -164,7 +164,7 @@ Valószínűsíthető, hogy a Neptun rendszer üzemeltetése is hasonló szoftve
 
 A Neptun esetében is megfigyelhető, hogy egy kurzus-, vagy tárgyfelvételi időszak kezdetén maximális az aktív felhasználók száma, majd ezután az idő elteltével rohamosan csökken. Általában, hiszen bemutattunk egy olyan esetet is, amikor nem következett be az elvárt roham, mert a felhasználók már korábban elintézhették a tárgyfelvételt, ezért csak az időben szélesen elosztva jelentek meg átlagos értékek a grafikonjainkon, amikor is néhány felhasználó valószínűleg véglegesítette a tárgyait.
 
-Hasonlóan nem teljesen kiszámítható egy kurzus számonkérése előtti felhasználói érdeklődés. Hiszen előfordulhat, hogy két olyan kurzus esetén, amely rendelkezik írásos, és audiovizuális oktatási anyaggal, eltérő módon az egyik kurzus esetében csak az írásos segédanyagot, a másik esetben pedig a multimédiás tartalmat fogják igénybe venni, a rendszer szempontjából ezzel eltérő erőforrás igényeket generálva.
+Hasonlóan nem teljesen kiszámítható egy kurzus számonkérése előtti felhasználói érdeklődés. Hiszen előfordulhat, hogy két olyan kurzus esetén, amely rendelkezik írásos, és audiovizuális oktatási anyaggal, eltérő módon az egyik kurzus esetében csak az írásos segédanyagot, a másik esetben pedig a multimédiás tartalmat fogják igénybe venni, a rendszer szempontjából ezzel eltérő erőforrásigényeket generálva.
 
 \subsection{Lehetséges modell alkotások}
 
