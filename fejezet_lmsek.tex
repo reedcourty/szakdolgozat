@@ -1,6 +1,9 @@
 \chapter{Tanulásmenedzsment rendszerek}
+
+Ebben a fejezetben definiálom a tanulásmenedzsment vagy oktatástámogató rendszerek fogalmát, bemutatom lényegesebb tulajdonságaikat, és néhány példát mutatok a piacon elérhető megvalósításaikról. A fejezet végén az ezen rendszerek közötti átjárhatóság megvalósítását részletezném.
+
 \section{A tanulásmenedzsment rendszerek fogalma}
-Tanulásmenedzsment rendszernek, angolul Learning Management Systemnek (LMS-nek), vagy oktatástámogató rendszereknek nevezzük azokat a szoftver alkalmazásokat, amelyek automatizálják az oktatás adminisztrációját, követését, az online kurzusok és az azokkal kapcsolatos események, anyagok kezelését.
+Tanulásmenedzsment rendszernek, angolul Learning Management Systemnek (LMS-nek), vagy oktatástámogató rendszernek nevezzük azt a szoftver alkalmazást, amely automatizálja az oktatás adminisztrációját, követését, az online kurzusok és az azokkal kapcsolatos események, anyagok kezelését.
 
 Egy robusztus LMS-nek képesnek kell lennie \cite{ellis2009}:
 \begin{sajat_itemize}
@@ -12,39 +15,39 @@ Egy robusztus LMS-nek képesnek kell lennie \cite{ellis2009}:
 \item személyre szabott tartalom előállítására és a tudás újrafelhasználásának lehetővé tételére.
 \end{sajat_itemize}
 
-Tehát egy tanulásmenedzsment rendszer nem más, mint olyan szolgáltatások összessége, amelyek támogatják a rendszer felhasználóinak adminisztrálását, jogosultságok kiosztását, új tartalmak, oktatási anyagok létrehozását, elérhetővé tételét, megosztását, a felhasználók tanulmányi menetének követését, irányítását, felkészültségüknek ellenőrzését, általában webes platformon, más rendszerekkel szabványosan együtt működve. Az LMS-ek általában lehetőséget biztosítanak, arra is, hogy a felhasználók a rendszeren keresztül kommunikáljanak is egymással.
+Tehát egy tanulásmenedzsment rendszer nem más, mint olyan szolgáltatások összessége, amelyek támogatják a rendszer felhasználóinak adminisztrálását, jogosultságok kiosztását, új tartalmak, oktatási anyagok létrehozását, elérhetővé tételét, megosztását, a felhasználók tanulmányi menetének követését, irányítását, felkészültségük ellenőrzését, mindezt általában webes platformon, más rendszerekkel szabványosan együtt működve. Az LMS-ek általában lehetőséget biztosítanak arra is, hogy a felhasználók a rendszeren keresztül kommunikáljanak is egymással.
 
-Fontos megjegyezni, hogy nem csak a közoktatásban, hanem a vállalati, ipari továbbképzésekben is szívesen alkalmazzák ezeket a rendszerek, mivel sok közülük rendelkezik a megfelelő humánerőforrás kezeléssel kapcsolatos funkciókkal is. A Hewlett-Packard-nál például felhőalapú oktatási rendszert használnak.
+Fontos megjegyezni, hogy nem csak a közoktatásban, hanem a vállalati, ipari továbbképzésekben is szívesen alkalmazzák ezeket a rendszerek, mivel sok közülük rendelkezik a megfelelő humánerőforrás-kezeléssel kapcsolatos funkciókkal is. Például a Hewlett-Packard egyik alkalmazottjától származó információk szerint a cégnél felhőalapú oktatási rendszert használnak.
 
 \section{A piacon elérhető oktatástámogató rendszerek}
 
-A piacon több nyílt forrású, ingyenesen elérhető és zárt, kereskedelmi változatokat, vagy vegyes koncepciókat is találunk, amelyek esetében ugyan a rendszer maga nyílt forrású, de a támogatásért, vagy akár bérüzemeltetésért már pénzbeli juttatást kérnek. \Aref{tab:openlms}.~táblázatban néhány ismertebb nyílt forrású LMS-t soroltam fel \cite{lms}. Érdemes megnézni, hogy általában PHP, MySQL technológiák segítségével valósítják meg ezeket a rendszereket.
+A piacon különböző nyílt forrású, ingyenesen elérhető és zárt, kereskedelmi változatokat vagy vegyes koncepciókat is találunk, amelyek esetében ugyan a rendszer maga nyílt forrású, de a támogatásért vagy akár bérüzemeltetésért már pénzbeli juttatást kérnek. \Aref{tab:openlms}.~táblázatban néhány ismertebb nyílt forrású LMS-t soroltam fel \cite{lms}. Érdemes megnézni, hogy általában PHP, MySQL technológiák segítségével valósítják meg ezeket a rendszereket.
 
 \input{tablazat_lms}
 
 Kereskedelmi termékekről nem sikerült érdemleges információhoz jutni az alkalmazott technológiákról, de feltételezhető a Java, .NET platformok használata is. A felhasználói oldalon gyakran találunk Flash alapú megvalósításokat.
 
-A HTML5 technológia terjedésének valószínűsíthető következménye lesz, hogy ezekben a rendszerekben is lecserélésre kerül a Flash-es keretrendszer. A HTML5 lehetőséget biztosít arra, hogy az eddigi megjelenést ne kelljen lecserélni, s ezzel a felhasználónak ne kelljen az új rendszerbe beletanulni, ugyanakkor hasonló felülettel találkozzanak az otthoni számítógépük, netbookjuk, táblagépük, vagy mobiltelefonjuk használata során. Ezek mellett fejlesztési oldalon költségcsökkenésre lehet számítani, mert nem kell a különböző eszközökre külön-külön lefejleszteni ugyanazt a grafikus interfészt, ami a HTML5 szabványosságának köszönhető. Az üzemeltetésre is kevesebb teher jut, hiszen ezen technológia nagy része felhasználói oldalon fut, így nem csökken a rendszer teljesítménye.
+A HTML5 technológia terjedésének valószínűsíthető következménye lesz, hogy ezekben a rendszerekben is lecserélésre kerül a Flash-es keretrendszer. A HTML5 lehetőséget biztosít arra, hogy az eddigi megjelenést ne kelljen lecserélni, s ezzel a felhasználónak ne kelljen az új rendszerbe beletanulni, ugyanakkor hasonló felülettel találkozzanak az otthoni számítógépük, netbookjuk, táblagépük vagy mobiltelefonjuk használata során. Ezek mellett fejlesztési oldalon költségcsökkenésre lehet számítani, mert nem kell a különböző eszközökre külön-külön lefejleszteni ugyanazt a grafikus interfészt, ami a HTML5 szabványosságának köszönhető. Az üzemeltetésre is kevesebb teher jut, hiszen ezen technológia nagy része felhasználói oldalon fut, így nem csökken a rendszer teljesítménye.
 
-Egyre több olyan céget találunk az Interneten, amelyek valamilyen oktatástámogató rendszer megoldást nyújtanak. Ezek egy része megvásárolható szoftveralkalmazás, amelyet a felhasználónak kell telepítenie, és üzemeltetnie, de egyre jobban elterjednek a felhő alapú megoldások, amelyek esetében a cég csak az alkalmazás használatát adja bérbe, az üzemeltetésével ő foglalkozik, levéve ezzel a felhasználó válláról a terhet.
+Egyre több olyan céget találunk az Interneten, amelyek valamilyen oktatástámogató megoldást nyújtanak. Ezek egy része megvásárolható szoftveralkalmazás, amelyet a felhasználónak kell telepítenie és üzemeltetnie, de egyre jobban elterjednek a felhő alapú megoldások, amelyek esetében a cég csak az alkalmazás használatát adja bérbe, az üzemeltetésével ő foglalkozik, levéve ezzel a felhasználó válláról a terhet.
 
 \section{Átjárhatóság az egyes LMS-ek között}
 
-Jogosan merül fel a kérdés, hogyha ilyen sok LMS érhető el a piacon melyik a számunkra megfelelő választás, és mi van abban az esetben, ha később rájövünk arra, hogy teljesen más igényeket kell kielégítenie, ezért szeretnénk egy másik alkalmazást használni. Vagy csak egyszerűen szeretnék a már meglévő tudástárunkat egyszerűen átmigrálni egy másik oktatástámogató rendszerbe. Ez a probléma már korábban is megjelent, megoldására találták ki a SCORM-ot.
+Jogosan merül fel a kérdés, hogy ha ilyen sok LMS érhető el a piacon, melyik a számunkra megfelelő választás, és mi van abban az esetben, ha később rájövünk arra, hogy teljesen más igényeket kell kielégítenünk, ezért szeretnénk egy másik alkalmazást használni. Vagy csak egyszerűen szeretnék a már meglévő tudástárunkat egyszerűen migrálni egy másik oktatástámogató rendszerbe. Ez a probléma már korábban is megjelent, megoldására találták ki a SCORM-ot.
 
 \section{SCORM}
-A SCORM (Sharable Content Object Reference Model) web-alapú e-learning rendszerekkel  kapcsolatos szabványok és specifikációk gyűjteménye. A SCORM definiálja a kommunikációt a kliens oldal és a futtatási környezet (run-time environment) között.
+A SCORM (Sharable Content Object Reference Model) web-alapú e-learning rendszerekkel  kapcsolatos szabványok és specifikációk gyűjteménye. A SCORM definiálja a kommunikációt a kliens oldal és a futtatási környezet (run-time environment) között \footnote{\href{http://scorm.com/scorm-explained/}{http://scorm.com/scorm-explained/}}.
 
 Felhasználói oldalról nézve a tanárok oktatási csomagokat tölthetnek fel/le a kurzusok között akár különböző LMS megvalósítások esetén is, ha azok támogatják az adott SCORM verziót (portabilitás).
 
-A SCORM megalkotása az ADL (Advanced Distributed Learning) Initiative nevű amerikai kormányzati szervezethez kötődik. Az ADL-t 1997-ben alapították a Védelmi minisztérium felügyelete alatt, feladata oktatás technológiai alkalmazások fejlesztése és implementálása. Később több országban nyitottak kutató laboratóriumot partnereiknél.
+A SCORM megalkotása az ADL (Advanced Distributed Learning) Initiative\footnote{\href{http://www.adlnet.org/}{http://www.adlnet.org/}} nevű amerikai kormányzati szervezethez kötődik. Az ADL-t 1997-ben alapították a Védelmi minisztérium felügyelete alatt, feladata oktatás technológiai alkalmazások fejlesztése és implementálása. Később több országban nyitottak kutatólaboratóriumot partnereiknél.
 
-Az interoperabilitás infrastruktúrája a SCORM-on és az ADL-R-en (ADL Registry-n) alapul. A SCORM felelős az LMS-ek közötti kurzusok és az azokhoz kapcsolódó adatok cseréjéért, a kurzusok közötti tartalom újrafelhasználásért, és a tanulóra szabott tartalom sorrendjéért. Az ADL-R a különböző tartalom könyvtárak és média tárolókban való keresést segíti elő.
+Az interoperabilitás infrastruktúrája a SCORM-on és az ADL-R-en (ADL Registry-n) alapul. A SCORM felelős az LMS-ek között a kurzusok és az azokhoz kapcsolódó adatok cseréjéért, a kurzusok közötti tartalom újrafelhasználásért és a tanulóra szabott tartalom sorrendjéért. Az ADL-R a különböző tartalomkönyvtárakban és média tárolókban való keresést segíti elő.
 
 A SCORM előnyei \cite{sco}:
 \begin{sajat_itemize}
-\item objektum alapú megközelítést biztosít az oktatási anyag fejlesztéshez és szállításához
+\item objektumalapú megközelítést biztosít az oktatási anyag fejlesztéshez és szállításához
 \item interoperabilitást biztosít ezekhez az objektumokhoz többfajta szállítási környezeten keresztül
-\item a tanuló saját ritmusú haladásán alapú szofisztikált tanulási stratégiákat enged
+\item a tanuló saját ritmusú haladásán alapuló szofisztikált tanulási stratégiákat enged meg
 \item lehetővé teszi tananyagok és oktatási stratégiák importálását, exportálását.
 \end{sajat_itemize}
