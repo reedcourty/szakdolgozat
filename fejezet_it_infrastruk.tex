@@ -1,8 +1,11 @@
 \chapter{Információs technológiai infrastruktúrák}
+
+Ebben a részben néhány skálázási és nagy rendelkezésre állást biztosító technikát mutatok be, majd néhány szóban a virtualizációt jellemzem, végül a felhőalapú infrastruktúrát, annak tulajdonságait, szolgáltatásait részletezem.
+
 \section{A klasszikus IT infrastruktúra}
-A klasszikusnak mondott IT infrastruktúrát az írás korábbi részében már bemutattam. Itt most a háromrétegű architektúra egyes rétegeinek skálázását, megbízhatósági szintjének növelésére adott lehetőségeket szeretném bemutatni.
+A klasszikusnak mondott háromrétegű IT infrastruktúrát az írás korábbi részében már bemutattam. Itt most az architektúra egyes rétegeinek skálázását, megbízhatósági szintjének növelésére adott lehetőségeket szeretném bemutatni.
 \subsection{Adatbázis réteg}
-Az adatbázis réteg skálázása és megbízhatósági szintjének, rendelkezésre állásának növelése megoldott probléma, hiszen az iparban az egyik legrégebben és leggyakrabban alkalmazott szolgáltatások közé tartoznak az adatbázis szerverek. A piacon található adatbázis-kezelőrendszerek nagy része rendelkezik beépített vagy külső technológiákkal.
+Az adatbázis réteg skálázása és megbízhatósági szintjének, rendelkezésre állásának növelése megoldott probléma, hiszen az iparban az egyik legrégebben és leggyakrabban alkalmazott szolgáltatások közé tartoznak az adatbázis szerverek. A piacon található adatbáziskezelő-rendszerek nagy része rendelkezik beépített vagy külső technológiákkal.
 Az adatbázisok esetében három eltérő megvalósítást szoktak alkalmazni, amelyek\cite{mizofr}:
 \begin{sajat_itemize}
 \item terheléselosztás (\angolul{load balancing}),
@@ -12,7 +15,7 @@ Az adatbázisok esetében három eltérő megvalósítást szoktak alkalmazni, a
 
 \subsubsection{Terheléselosztás (\angolul{load balancing})}
 
-Az adatbázisszerverek képesek együtt működni abból a célból, hogy csökkentség az egy példányra jutó kérések számát. Az úgynevezett terheléselosztás azt jelenti, hogy egy hardver vagy szoftver elem az adatbázisréteghez beérkező tranzakciókat valamilyen algoritmus (pl. \angolul{round-robin}, vagy bonyolultabb megoldások) szerint szétosztja a szerver példányok között. Ennél a technikánál a rétegen kívüli részvevőknek úgy tűnik, mintha az egyetlen adatbázisszerver a terheléselosztó lenne.
+Az adatbázisszerverek képesek együttműködni abból a célból, hogy csökkentség az egy példányra jutó kérések számát. Az úgynevezett terheléselosztás azt jelenti, hogy egy hardver vagy szoftver elem az adatbázisréteghez beérkező tranzakciókat valamilyen algoritmus (pl. \angolul{round-robin} vagy bonyolultabb megoldások) szerint szétosztja a szerver példányok között. Ennél a technikánál a rétegen kívüli részvevőknek úgy tűnik, mintha az egyetlen adatbázisszerver a terheléselosztó lenne.
 
 A terheléselosztás megvalósítása nem egyszerű adatbázisok esetén, hiszen a szerver példányoknak ugyanazt az adathalmazt kell kezelniük. Csak olvasás esetén ez nem jelent problémát, mivel minden szerver példány ugyanazzal az adattal rendelkezik, ebből kifolyólag a terheléselosztó bármelyiknek is küldi tovább a kérést, ugyanazt az adatot fogja visszaadni.
 Írási műveletek esetén már bonyolultabb a megvalósítás, hiszen a kérés eredményének valamilyen megoldással minden egyes szerver példányhoz el kell jutnia. Erre különböző szinkronizálási technikák alkalmazhatók, amelyeket most itt nem áll szándékomban részletezni.
@@ -27,23 +30,29 @@ Az ún. \angolul{multimaster} megoldás esetén minden példány írható és ol
 
 \subsubsection{Feladatátadás hiba esetén (\angolul{failover})}
 
-A feladatátadás egy olyan technika, amelynek során bármilyen szoftveres/hardveres hiba, vagy rendellenes működés eseten az egyik erőforrástól egy redundáns vagy készenléti erőforrás automatikusan, esetleg manuálisan átveszi az adott feladat végrehajtását.
+A feladatátadás egy olyan technika, amelynek során bármilyen szoftveres/hardveres hiba vagy rendellenes működés esetén az egyik erőforrástól egy redundáns vagy készenléti erőforrás automatikusan, esetleg manuálisan átveszi az adott feladat végrehajtását.
 
-Az egyes szerverek között egy állandó kapcsolat (,,\angolul{heartbeat}'') található. Amennyiben az egyik szerver oldaláról megszűnne a ,,\angolul{heartbeat}'', úgy a másik amilyen hamar csak lehetséges átveszi a meghibásodott kiszolgáló feladatát. Mihelyt a kiesett szerver újra működőképes a másodlagos szerver visszaadja neki a feladat végrehajtásának jogát.
+Az egyes szerverek között egy állandó kapcsolat (,,\angolul{heartbeat}'') található. Amennyiben az egyik szerver oldaláról megszűnne a ,,\angolul{heartbeat}'', úgy a másik amilyen hamar csak lehetséges, átveszi a meghibásodott kiszolgáló feladatát. Mihelyt a kiesett szerver újra működőképes, a másodlagos szerver visszaadhatja neki a feladat végrehajtásának jogát.
 
 \subsection{Alkalmazás réteg}
 
 Mivel az alkalmazás réteg sokszor hardver szinten nem válik szét a webkiszolgáló rétegtől, azért a következőekben ott bemutatott technikákat lehet használni ennek a rétegnek az esetében is.
-Viszont ennek a rétegnek van egy olyan tulajdonsága skálázási szempontból, amely nem kezelhető az üzemeltetési oldalról, ez pedig magának az alkalmazásnak a skálázhatósága, vagyis hogy a lefejlesztett program mennyire ad lehetőséget arra, hogy skálázható legyen.
+Viszont ennek a rétegnek van egy olyan tulajdonsága skálázási szempontból, amely nem kezelhető az üzemeltetési oldalról, ez pedig magának az alkalmazásnak a skálázhatósága, vagyis hogy a fejlesztett program mennyire ad lehetőséget arra, hogy skálázható legyen.
 
 \subsection{Webkiszolgáló réteg}
 
-A webkiszolgáló réteg rendelkezésre állásának növelésére az egyik leggyakoribb megoldás a terheléselosztás. Erre az egyik technika az ún. RRDNS, vagy Round-robin Domain Name Service. Lényege, hogy az oldalunkhoz kapcsolódó DNS bejegyzéshez több IP tartozik, mégpedig a webkiszolgáló példányaink számával megegyező. Így minden egyes DNS feloldás eredménye eltérő IP-cím lesz, a round-robin működésnek megfelelően, ezért a webszerverek közel egyenlő módon lesznek terhelve.
+A webkiszolgáló réteg rendelkezésre állásának növelésére az egyik leggyakoribb megoldás a terheléselosztás. Erre az egyik technika az ún. RRDNS, vagy Round-robin Domain Name Service. Lényege, hogy az oldalunkhoz kapcsolódó DNS bejegyzéshez több IP tartozik, mégpedig a webkiszolgáló példányaink számával megegyező. Így minden egyes DNS feloldás eredménye eltérő IP-cím lesz a round-robin működésnek megfelelően, ezért a webszerverek közel egyenlő módon lesznek terhelve.
 
 A megoldás előnye, hogy rugalmasan skálázható, hiszen webkiszolgálókat elvehetünk és hozzáadhatunk a rendszerhez anélkül, hogy ebből a külvilág bármit is észrevenne. Hátránya, hogy a DNS szerver esetlegesen SPOF-ként (\angolul{Single Point of Failure}) viselkedhet, hiszen kiesése esetén a kérések nem jutnak el a webszervereinkhez. Természetesen a DNS szerverek példányszámának növelésével ez a probléma megoldható.
 
 Az előző megoldásnál fontos, hogy ugyanaz a kliens ugyanahhoz a szerverhez kapcsolódjon egy \angolul{session} ideje alatt, kivéve ha a \angolul{session} kezelés az adatbázisrétegben kerül megvalósításra.
 Erre a problémára nyújthat megoldást például az Apache (\href{https://httpd.apache.org/}{https://httpd.apache.org/}) webszerver beépített \textit{mod\_proxy\_balancer} modulja, amely kezeli ezeket a sessionöket, és terheléselosztást is megvalósít. Természetesen nem csak az Apache, de például a lighttpd (\href{http://www.lighttpd.net}{http://www.lighttpd.net}) és a nginx (\href{http://www.nginx.org/}{http://www.nginx.org/}) is rendelkezik beépített load balancing funkciókkal.
+
+Természetesen az itt felsorolt különböző technikai megvalósítások koránt sem jelentik a teljes listát, nem is részleteztem teljes mélységükben őket, csak a három alapvető koncepciót mutattam be.
+
+\section{Virtualizáció}
+
+
 
 \section{Felhőalapú infrastruktúrák}
 \subsection{Mi is az a ,,számítási felhő''?}
