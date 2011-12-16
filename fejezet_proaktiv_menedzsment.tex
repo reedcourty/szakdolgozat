@@ -36,9 +36,7 @@ A proaktivitás ott jelenik meg, hogy a rendszernek időben kell lépnie, amikor
 
 A piacon található nagyobb felhőszolgáltatást nyújtó cégek publikálnak a rendszerükhöz egy API-t (alkalmazás programozási felületet, \angolul{Application Programming Interface}), amely lehetőséget biztosít arra, hogy különféle műveleteket végezzünk el virtuális szerverünkön anélkül, hogy a szolgáltató által nyújtott adminisztrációs felületre belépnénk.
 
-Ilyen műveletek lehetnek az alapvetőnek számító szerverleállítás, -elindítás, szerverek kilistázása, vagy a már plusznak számító erőforrások igénylése, módosítása, új terheléselosztó konfigurálása és beüzemelése. A már korábban említett Amazon EC2 szolgáltatás egy viszonylag egyszerű, kényelmes, és funkciókban bővelkedő API-val rendelkezik. \Aref{sec:appendix_amazonaws} függelékben összeszedtem néhányat ezek közül a metódusok közül.
-
-\todo{$\uparrow$ Ezek közül mi használható egy ilyen proaktív felügyelet esetén?}
+Ilyen műveletek lehetnek az alapvetőnek számító szerverleállítás, -elindítás, szerverek kilistázása, vagy a már plusznak számító erőforrások igénylése, módosítása, új terheléselosztó konfigurálása és beüzemelése. A már korábban említett Amazon EC2 szolgáltatás egy viszonylag egyszerű, kényelmes, és funkciókban bővelkedő API-val rendelkezik. \Aref{sec:appendix_amazonaws} függelékben összeszedtem néhányat ezek közül a metódusok közül. Alkalmazásukra jó példa lehet a megnövekedett felhasználó szám esetén új szerverpéldányok konfigurálása és üzembe helyezése vagy a már meglévő, de még nem használt példányok elindítása.
 
 Ebből kifolyólag lehetséges lenne, hogy pl. egy Amazonnál üzemeltetett oktatástámogató rendszer bizonyos eseményekhez előre beállított szabályok alapján újabb erőforrásokat rendeljen hozzá. Például amennyiben az üzemeltetés tudja, hogy egy jövőbeli teszt miatt nagy számú konkurens felhasználóra lehet számítani, akkor az LMS-ben megadott teszt kezdetéhez ütemezve a rendszer automatikusan meghívja azokat az utasításokat, amelynek következtében újabb erőforrásokat kapunk, majd a teszt kitöltésének végén visszaadja azokat az erőforrásokat a szolgáltatónak.
 
