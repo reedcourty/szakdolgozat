@@ -32,7 +32,7 @@ A proaktivitás ott jelenik meg, hogy a rendszernek időben kell lépnie, amikor
 
 \section{Proaktív erőforrás-kezelés oktatástámogató rendszerek esetén}
 
-\todo{Klasszikus infrastruktúrán? Virtualizált infrastruktúrán?}
+A klasszikus infrastuktúra esetében a proaktív menedzsment szűk területtel rendelkezik, mivel ebben az esetben inkább az üzemeltetés előrelátó viselkedése fedi le azt. A meglévő infrastruktúra korlátozza az azonnali lépéseket, az erőforrás bővítése a tényleges hardver beszerzését, és beüzemelését jelenti. A virtualizált infrastruktúrában ezzel szemben már valódi proaktivitásról beszélhetünk. Mivel már említettem, hogy a felhőalapú infrastruktúra valójában egy virtualizált infrastruktúra, ezért a következőekben inkább a felhőalapú megvalósításokra koncentrálnék.
 
 A piacon található nagyobb felhőszolgáltatást nyújtó cégek publikálnak a rendszerükhöz egy API-t (alkalmazás programozási felületet, \angolul{Application Programming Interface}), amely lehetőséget biztosít arra, hogy különféle műveleteket végezzünk el virtuális szerverünkön anélkül, hogy a szolgáltató által nyújtott adminisztrációs felületre belépnénk.
 
@@ -48,11 +48,9 @@ Az egyedüli nehézséget a már korábbi Modellek (\ref{sec:modellek}.~fejezet)
 
 \subsection{A felhők előnyei és hátrányai LMS-ek üzemeltetése esetén}
 
-\todo{+ virtualizáció}
-
 Mint ahogy azt már vázoltam, egy oktatástámogató rendszert mind hagyományos, mind felhőalapú infrastruktúrán lehet üzemeltetni. Ebben a részben szeretném kicsit összefoglalni, hogy felhő esetében milyen előnyökkel és hátrányokkal jár ez.
 
-Láthattuk, hogy egy LMS erőforrásigénye nagyban függ a felhasználói viselkedéstől, azt is megmutattam, hogy napjainkban nincsenek még 100\%-os modellek, módszerek ezek előrejelzésére. Amíg a klasszikus IT infrastruktúránál az üzemeltetés csak próbálja mindig meghatározni a maximális erőforrásigényt, és ennek megfelelően kialakítani, fejleszteni a rendszert, addig a felhőknél alkalmazott proaktívitást megvalósító technológiáknak köszönhetően ezek a plusz erőforrásigények automatikusan kielégítésre kerülnek, igaz, hogy költség szempontjából kicsit drágábbak. Viszont ezeknek a költségeknek is több összetevője van, hiszen a felhőalapú üzemeltetés esetén nem kell foglalkoznunk eszközbeszerzéssel, karbantartással, hibás hardverek pótlásával, amely a nem várt költségek nagy részét tehetik ki. Felhők esetén előre ki tudjuk számolni a költségeinket, a rendszer megfelelő méretezésével pedig a drágább \angolul {on-demand} erőforrások költségeit is minimalizálhatjuk.
+Láthattuk, hogy egy LMS erőforrásigénye nagyban függ a felhasználói viselkedéstől, azt is megmutattam, hogy napjainkban nincsenek még 100\%-os modellek, módszerek ezek előrejelzésére. Amíg a klasszikus IT infrastruktúránál az üzemeltetés csak próbálja mindig meghatározni a maximális erőforrásigényt, és ennek megfelelően kialakítani, fejleszteni a rendszert, addig a felhőknél alkalmazott proaktivitást megvalósító technológiáknak köszönhetően ezek a plusz erőforrásigények automatikusan kielégítésre kerülnek, igaz, hogy költség szempontjából kicsit drágábbak. Viszont ezeknek a költségeknek is több összetevője van, hiszen a felhőalapú üzemeltetés esetén nem kell foglalkoznunk eszközbeszerzéssel, karbantartással, hibás hardverek pótlásával, amely a nem várt költségek nagy részét tehetik ki. Felhők esetén előre ki tudjuk számolni a költségeinket, a rendszer megfelelő méretezésével pedig a drágább \angolul {on-demand} erőforrások költségeit is minimalizálhatjuk.
 
 Az saját IT infrastruktúra üzemeltetésénél előnyt jelenthet, hogy minden adat, amely valamilyen módon a rendszerhez, vagy az alkalmazáshoz kapcsolódik a mi tulajdonunkban van. Előfordulhatnak olyan adatok (pl. személyes adatok, vagy kutatások eredményei), amelyeket nem szeretnénk kiadni harmadik félnek. Ilyen esetekben egy publikus felhőszolgáltatást nyújtó szolgáltatónál nem üzemeltethetjük a rendszerünket.
 
