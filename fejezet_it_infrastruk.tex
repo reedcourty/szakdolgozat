@@ -119,21 +119,15 @@ Mélyebb elemzés során azonban a felhőt szolgáltatási modellekre lehet bont
 
 A felhő napjainkban négy szolgáltatási modellt tartalmaz, amelyek valamilyen szinten egymásra épülnek, ám nem feltétlenül határolhatóak el egzaktul egymástól. \Aref{fig:cloud_retegek}.~ábrán a felhő megoldások egy réteges felosztása látható, amely körülbelül azt hivatott kifejezni, hogy alulról fölfelé hogyan csökken a szolgáltatások felhasználó által felügyelendő része.
 
-\todo{Ábrákat megigazítani}
-
 \begin{figure}[h!]
-\centering
-\includegraphics[width=0.25\textwidth]{figures/cloud_retegek.png}
-\caption{A számítási felhő rétegei \label{fig:cloud_retegek}}
+  \centering
+  \subfloat[A számítási felhő rétegei]{\label{fig:cloud_retegek}\includegraphics[width=0.45\textwidth]{figures/cloud_retegek.png}}                
+  \subfloat[A számítási felhő szolgáltatási modelljei]{\label{fig:cloud_service_models}\includegraphics[width=0.45\textwidth]{figures/cloud_service_models.png}}
+  \caption{A számítási felhő}
+  \label{fig:topologia}
 \end{figure}
 
 A négy szolgáltatási modell és néhány hozzájuk kapcsolódó szolgáltató cég logója látható \aref{fig:cloud_service_models}.~ábrán.
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.5\textwidth]{figures/cloud_service_models.png}
-\caption{A számítási felhő szolgáltatási modelljei \label{fig:cloud_service_models}}
-\end{figure}
  
 \subsubsection{Tárhely mint szolgáltatás (\angolul{data-Storage-as-a-Service, dSaaS})}
 Ezt a szolgáltatást nem minden irodalom szokta említeni, ám én itt mégis külön kezelném, hiszen ez a felhő legalapvetőbb szolgáltatása. Lényege, hogy online tárhelyet biztosít a felhasználóknak. Ilyen szolgáltatást nyújt pl. a \href{http://www.dropbox.com}{Dropbox.com} (főleg személyes felhasználásra, biztonsági mentés, megosztás céljából) vagy az \href{https://aws.amazon.com/s3/}{Amazon S3} (inkább nagy szolgáltatók használják).
